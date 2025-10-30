@@ -9,3 +9,7 @@ notebooks/data/*
 
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
+
+# Local project documentation
+CLAUDE.md
+/data/3d_context
