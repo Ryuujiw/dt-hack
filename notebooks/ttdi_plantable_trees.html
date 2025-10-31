@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5c2a71918cd5c6651205d012e2a3eb83 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5c2a71918cd5c6651205d012e2a3eb83" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5c2a71918cd5c6651205d012e2a3eb83 = L.map(
+                "map_5c2a71918cd5c6651205d012e2a3eb83",
+                {
+                    center: [3.13925, 101.628],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 16,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5d998811d1297b90a89a75db790c57fc = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5d998811d1297b90a89a75db790c57fc.addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+            var circle_marker_93d302b32129850b6dcf0fad0871d1b6 = L.circleMarker(
+                [3.130159377004451, 101.6313772125552],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_75c185807efdb17da319b53a2fc343fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e4c1ec07ce0ecaeeaf44c2e18aa4de8 = $(`<div id="html_7e4c1ec07ce0ecaeeaf44c2e18aa4de8" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_75c185807efdb17da319b53a2fc343fc.setContent(html_7e4c1ec07ce0ecaeeaf44c2e18aa4de8);
+            
+        
+
+        circle_marker_93d302b32129850b6dcf0fad0871d1b6.bindPopup(popup_75c185807efdb17da319b53a2fc343fc)
+        ;
+
+        
+    
+    
+            var circle_marker_104d60927491106c339a7ad31bb8f4d5 = L.circleMarker(
+                [3.1301617980834417, 101.63143503234372],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_8857c845c20947f953943bd7912ef543 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_51a1f26304f580974a79ec355434f73e = $(`<div id="html_51a1f26304f580974a79ec355434f73e" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_8857c845c20947f953943bd7912ef543.setContent(html_51a1f26304f580974a79ec355434f73e);
+            
+        
+
+        circle_marker_104d60927491106c339a7ad31bb8f4d5.bindPopup(popup_8857c845c20947f953943bd7912ef543)
+        ;
+
+        
+    
+    
+            var circle_marker_1fd255d5c22cbd1808b974db32210932 = L.circleMarker(
+                [3.126888707010063, 101.63773566839228],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_603d9171c1949087d2bc0664319b3a39 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b5053cf30f878c43a8673540f0e9d9d9 = $(`<div id="html_b5053cf30f878c43a8673540f0e9d9d9" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_603d9171c1949087d2bc0664319b3a39.setContent(html_b5053cf30f878c43a8673540f0e9d9d9);
+            
+        
+
+        circle_marker_1fd255d5c22cbd1808b974db32210932.bindPopup(popup_603d9171c1949087d2bc0664319b3a39)
+        ;
+
+        
+    
+    
+            var circle_marker_770afba2fcfcfee475f8aaa8a47d0a0f = L.circleMarker(
+                [3.127743886083552, 101.63773979333982],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_8e7459778102ec9bd32fb723da8f2b19 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c4bf9feaa6801cad0c04b4f316f9bad = $(`<div id="html_1c4bf9feaa6801cad0c04b4f316f9bad" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_8e7459778102ec9bd32fb723da8f2b19.setContent(html_1c4bf9feaa6801cad0c04b4f316f9bad);
+            
+        
+
+        circle_marker_770afba2fcfcfee475f8aaa8a47d0a0f.bindPopup(popup_8e7459778102ec9bd32fb723da8f2b19)
+        ;
+
+        
+    
+    
+            var circle_marker_68307f1561aff4c05c0ca08d0a5083cc = L.circleMarker(
+                [3.1269823283425655, 101.63789126337535],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_20d5410f5a8d812c13b1e00e29f76f40 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_950cbf51dde8e29a13de0d481bcde525 = $(`<div id="html_950cbf51dde8e29a13de0d481bcde525" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_20d5410f5a8d812c13b1e00e29f76f40.setContent(html_950cbf51dde8e29a13de0d481bcde525);
+            
+        
+
+        circle_marker_68307f1561aff4c05c0ca08d0a5083cc.bindPopup(popup_20d5410f5a8d812c13b1e00e29f76f40)
+        ;
+
+        
+    
+    
+            var circle_marker_014e107b4cab97d684099fd37460d1d9 = L.circleMarker(
+                [3.127745335570464, 101.63807116634715],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_2c3027d26326853d09716d89b4c3c77d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa72380fcef73fed0fba3b3caa185a5f = $(`<div id="html_fa72380fcef73fed0fba3b3caa185a5f" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_2c3027d26326853d09716d89b4c3c77d.setContent(html_fa72380fcef73fed0fba3b3caa185a5f);
+            
+        
+
+        circle_marker_014e107b4cab97d684099fd37460d1d9.bindPopup(popup_2c3027d26326853d09716d89b4c3c77d)
+        ;
+
+        
+    
+    
+            var circle_marker_649750f4aaaf7a55f2c573fb50fcb999 = L.circleMarker(
+                [3.126884868967966, 101.63780933865456],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_eb7365101e6c348c21431e0226821a1f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e172b5bff2bb1e84d644b1d929af2fc = $(`<div id="html_5e172b5bff2bb1e84d644b1d929af2fc" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_eb7365101e6c348c21431e0226821a1f.setContent(html_5e172b5bff2bb1e84d644b1d929af2fc);
+            
+        
+
+        circle_marker_649750f4aaaf7a55f2c573fb50fcb999.bindPopup(popup_eb7365101e6c348c21431e0226821a1f)
+        ;
+
+        
+    
+    
+            var circle_marker_096701d9b1e6f4622bb26f035c4cebe2 = L.circleMarker(
+                [3.1283730017118314, 101.6278524407516],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_3cedbd8abb46fbef6794e95cf5cfeb59 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_68657538db278b20556ef774dcce78f8 = $(`<div id="html_68657538db278b20556ef774dcce78f8" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_3cedbd8abb46fbef6794e95cf5cfeb59.setContent(html_68657538db278b20556ef774dcce78f8);
+            
+        
+
+        circle_marker_096701d9b1e6f4622bb26f035c4cebe2.bindPopup(popup_3cedbd8abb46fbef6794e95cf5cfeb59)
+        ;
+
+        
+    
+    
+            var circle_marker_bf9bb03ccfdfbedc3b32618b89eb10d5 = L.circleMarker(
+                [3.128171983281522, 101.62766217996837],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_bc7a4596d52b2ce006601f004cd8e410 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_098d8b58071903c2b6f20b6fe67af309 = $(`<div id="html_098d8b58071903c2b6f20b6fe67af309" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_bc7a4596d52b2ce006601f004cd8e410.setContent(html_098d8b58071903c2b6f20b6fe67af309);
+            
+        
+
+        circle_marker_bf9bb03ccfdfbedc3b32618b89eb10d5.bindPopup(popup_bc7a4596d52b2ce006601f004cd8e410)
+        ;
+
+        
+    
+    
+            var circle_marker_13626ba2fde91f671b78f2d3f8173473 = L.circleMarker(
+                [3.1355735092455572, 101.62334116706971],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_763579f1e5cac381ba4c133fd13c715a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ca90718989421e5aa320f015d852bd0 = $(`<div id="html_6ca90718989421e5aa320f015d852bd0" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_763579f1e5cac381ba4c133fd13c715a.setContent(html_6ca90718989421e5aa320f015d852bd0);
+            
+        
+
+        circle_marker_13626ba2fde91f671b78f2d3f8173473.bindPopup(popup_763579f1e5cac381ba4c133fd13c715a)
+        ;
+
+        
+    
+    
+            var circle_marker_3cf4fb686503f2375b36e537d31d6f03 = L.circleMarker(
+                [3.1351834249469164, 101.62324124795387],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_a4521045be474049fdc3ba3028b6c626 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab58a76a3bc8feb8cdd00b05c2e20093 = $(`<div id="html_ab58a76a3bc8feb8cdd00b05c2e20093" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_a4521045be474049fdc3ba3028b6c626.setContent(html_ab58a76a3bc8feb8cdd00b05c2e20093);
+            
+        
+
+        circle_marker_3cf4fb686503f2375b36e537d31d6f03.bindPopup(popup_a4521045be474049fdc3ba3028b6c626)
+        ;
+
+        
+    
+    
+            var circle_marker_b2f716b620a2b5d1cd8c628484b0f623 = L.circleMarker(
+                [3.1353306849202527, 101.62333021030176],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_e821261c778c7e1e72df9264132aec78 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8730aa7b36ee186e4e0a98159d6b0b9f = $(`<div id="html_8730aa7b36ee186e4e0a98159d6b0b9f" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_e821261c778c7e1e72df9264132aec78.setContent(html_8730aa7b36ee186e4e0a98159d6b0b9f);
+            
+        
+
+        circle_marker_b2f716b620a2b5d1cd8c628484b0f623.bindPopup(popup_e821261c778c7e1e72df9264132aec78)
+        ;
+
+        
+    
+    
+            var circle_marker_568b76e8eca7d030a25da4519b41bb22 = L.circleMarker(
+                [3.1399330476894427, 101.62167693302922],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_64cae1dcc0c2ad9b0e76c0f259f7478a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cf2326119fd49e5f5472c18cdac17989 = $(`<div id="html_cf2326119fd49e5f5472c18cdac17989" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_64cae1dcc0c2ad9b0e76c0f259f7478a.setContent(html_cf2326119fd49e5f5472c18cdac17989);
+            
+        
+
+        circle_marker_568b76e8eca7d030a25da4519b41bb22.bindPopup(popup_64cae1dcc0c2ad9b0e76c0f259f7478a)
+        ;
+
+        
+    
+    
+            var circle_marker_0f248b23beb0bd9fdba718c463a1e331 = L.circleMarker(
+                [3.1404556224377154, 101.62144220278944],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_03110f489a552e2581475838fa304399 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a7809d74afee3a58cbb09f6f6a304ff = $(`<div id="html_8a7809d74afee3a58cbb09f6f6a304ff" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_03110f489a552e2581475838fa304399.setContent(html_8a7809d74afee3a58cbb09f6f6a304ff);
+            
+        
+
+        circle_marker_0f248b23beb0bd9fdba718c463a1e331.bindPopup(popup_03110f489a552e2581475838fa304399)
+        ;
+
+        
+    
+    
+            var circle_marker_cb58639a2e8f3c3b665b2cc05f7e714d = L.circleMarker(
+                [3.1402415123676737, 101.6217043710223],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_27000f72da917cb155fb4bdb9fdcd50d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d0f58e68d102243544d230d03417c2fa = $(`<div id="html_d0f58e68d102243544d230d03417c2fa" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_27000f72da917cb155fb4bdb9fdcd50d.setContent(html_d0f58e68d102243544d230d03417c2fa);
+            
+        
+
+        circle_marker_cb58639a2e8f3c3b665b2cc05f7e714d.bindPopup(popup_27000f72da917cb155fb4bdb9fdcd50d)
+        ;
+
+        
+    
+    
+            var circle_marker_31e2b7a4abb4f2dd9161782c24bc2432 = L.circleMarker(
+                [3.1400986239602076, 101.62155261541845],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_fba17d2a78440f8104f98c66b909c690 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_53580a1fb39c6e7e1f53130aea2ac45f = $(`<div id="html_53580a1fb39c6e7e1f53130aea2ac45f" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_fba17d2a78440f8104f98c66b909c690.setContent(html_53580a1fb39c6e7e1f53130aea2ac45f);
+            
+        
+
+        circle_marker_31e2b7a4abb4f2dd9161782c24bc2432.bindPopup(popup_fba17d2a78440f8104f98c66b909c690)
+        ;
+
+        
+    
+    
+            var circle_marker_c877b6a820df9cbddf448e9657d6a738 = L.circleMarker(
+                [3.1398397526643107, 101.62184689040132],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_dc43cf977f4eefe58dde79875bff3cd5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dcdd0efb6d2f3e4b9b37d14fbefa8184 = $(`<div id="html_dcdd0efb6d2f3e4b9b37d14fbefa8184" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_dc43cf977f4eefe58dde79875bff3cd5.setContent(html_dcdd0efb6d2f3e4b9b37d14fbefa8184);
+            
+        
+
+        circle_marker_c877b6a820df9cbddf448e9657d6a738.bindPopup(popup_dc43cf977f4eefe58dde79875bff3cd5)
+        ;
+
+        
+    
+    
+            var circle_marker_dce1e285a36fb036b387b55407e1ed84 = L.circleMarker(
+                [3.1506747990193835, 101.63296975624057],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_8a1575c336fe593d47c5791273f2620f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ee5f840ccb803bf2ac08daf923adbab = $(`<div id="html_6ee5f840ccb803bf2ac08daf923adbab" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_8a1575c336fe593d47c5791273f2620f.setContent(html_6ee5f840ccb803bf2ac08daf923adbab);
+            
+        
+
+        circle_marker_dce1e285a36fb036b387b55407e1ed84.bindPopup(popup_8a1575c336fe593d47c5791273f2620f)
+        ;
+
+        
+    
+    
+            var circle_marker_c4ed768bb9a5c3ad7e9bdea6ab4a033c = L.circleMarker(
+                [3.150889721821595, 101.63283065784971],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_1414801ed5ed591bf6f69e9397238536 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e1be250b2bfa631b41d34ce71dc7652 = $(`<div id="html_4e1be250b2bfa631b41d34ce71dc7652" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_1414801ed5ed591bf6f69e9397238536.setContent(html_4e1be250b2bfa631b41d34ce71dc7652);
+            
+        
+
+        circle_marker_c4ed768bb9a5c3ad7e9bdea6ab4a033c.bindPopup(popup_1414801ed5ed591bf6f69e9397238536)
+        ;
+
+        
+    
+    
+            var circle_marker_212205a0015f33fa4f7d92907699aacd = L.circleMarker(
+                [3.1490860378890964, 101.6328440188906],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_12d0f080e59a88fd1b4415684a238450 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_66ca4078a6489fe41228fd8ed8df660b = $(`<div id="html_66ca4078a6489fe41228fd8ed8df660b" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_12d0f080e59a88fd1b4415684a238450.setContent(html_66ca4078a6489fe41228fd8ed8df660b);
+            
+        
+
+        circle_marker_212205a0015f33fa4f7d92907699aacd.bindPopup(popup_12d0f080e59a88fd1b4415684a238450)
+        ;
+
+        
+    
+    
+            var circle_marker_64ab24ee8f6965ebdac2c4b815dd965d = L.circleMarker(
+                [3.1370579192113053, 101.63314069577747],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_11e4d020006500d388bab716ab7c0939 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_188d0a2e95454ca17ad3dc2c67b5c116 = $(`<div id="html_188d0a2e95454ca17ad3dc2c67b5c116" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_11e4d020006500d388bab716ab7c0939.setContent(html_188d0a2e95454ca17ad3dc2c67b5c116);
+            
+        
+
+        circle_marker_64ab24ee8f6965ebdac2c4b815dd965d.bindPopup(popup_11e4d020006500d388bab716ab7c0939)
+        ;
+
+        
+    
+    
+            var circle_marker_d73c3fb1f68aec844b61a0b160b028ea = L.circleMarker(
+                [3.13824060627755, 101.63355660876056],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_4241b831ae40d6a9fabbb458b699da74 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8e0b80f927d340370e58d9d1e6bb52b8 = $(`<div id="html_8e0b80f927d340370e58d9d1e6bb52b8" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_4241b831ae40d6a9fabbb458b699da74.setContent(html_8e0b80f927d340370e58d9d1e6bb52b8);
+            
+        
+
+        circle_marker_d73c3fb1f68aec844b61a0b160b028ea.bindPopup(popup_4241b831ae40d6a9fabbb458b699da74)
+        ;
+
+        
+    
+    
+            var circle_marker_88a8dd4217e4c170915064ea55112ff4 = L.circleMarker(
+                [3.137435605908329, 101.63336377973582],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_6dde62ba5222c5a820f4a66e3352fe73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04bf7233c50f47f594c4d5eaf6bfb033 = $(`<div id="html_04bf7233c50f47f594c4d5eaf6bfb033" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_6dde62ba5222c5a820f4a66e3352fe73.setContent(html_04bf7233c50f47f594c4d5eaf6bfb033);
+            
+        
+
+        circle_marker_88a8dd4217e4c170915064ea55112ff4.bindPopup(popup_6dde62ba5222c5a820f4a66e3352fe73)
+        ;
+
+        
+    
+    
+            var circle_marker_9fcd6fa72f9c1dfbeeeeb3b02ced671c = L.circleMarker(
+                [3.1389570361770645, 101.63364448944813],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_23decc1a9d23a5ae0ebcc36ada8972f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_07076d65c63c38e1c3b80b90c6eff1b3 = $(`<div id="html_07076d65c63c38e1c3b80b90c6eff1b3" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_23decc1a9d23a5ae0ebcc36ada8972f6.setContent(html_07076d65c63c38e1c3b80b90c6eff1b3);
+            
+        
+
+        circle_marker_9fcd6fa72f9c1dfbeeeeb3b02ced671c.bindPopup(popup_23decc1a9d23a5ae0ebcc36ada8972f6)
+        ;
+
+        
+    
+    
+            var circle_marker_83c55c23ef21f7cebba8a610a3ea7f14 = L.circleMarker(
+                [3.1511567222023174, 101.61410047733284],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_c67cf8187c3be1247079f32fee319a44 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_917a1a7e250443b3158831e38d5ccbc4 = $(`<div id="html_917a1a7e250443b3158831e38d5ccbc4" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_c67cf8187c3be1247079f32fee319a44.setContent(html_917a1a7e250443b3158831e38d5ccbc4);
+            
+        
+
+        circle_marker_83c55c23ef21f7cebba8a610a3ea7f14.bindPopup(popup_c67cf8187c3be1247079f32fee319a44)
+        ;
+
+        
+    
+    
+            var circle_marker_ea004e14c14e508ed6fe9f4db2e1ffab = L.circleMarker(
+                [3.1501098702500925, 101.61370441640642],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_d676070dfbdfc424c8f81c4b013af51c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_95f25cf782c5feb7da4f506bf22d5682 = $(`<div id="html_95f25cf782c5feb7da4f506bf22d5682" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_d676070dfbdfc424c8f81c4b013af51c.setContent(html_95f25cf782c5feb7da4f506bf22d5682);
+            
+        
+
+        circle_marker_ea004e14c14e508ed6fe9f4db2e1ffab.bindPopup(popup_d676070dfbdfc424c8f81c4b013af51c)
+        ;
+
+        
+    
+    
+            var circle_marker_e42d50dc495e192822ede13f6268c197 = L.circleMarker(
+                [3.1494342512141107, 101.61514553338421],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_8b941f38f36ac3d39297e084496e1762 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3504da4554024b53e6a4c79a052f0e15 = $(`<div id="html_3504da4554024b53e6a4c79a052f0e15" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_8b941f38f36ac3d39297e084496e1762.setContent(html_3504da4554024b53e6a4c79a052f0e15);
+            
+        
+
+        circle_marker_e42d50dc495e192822ede13f6268c197.bindPopup(popup_8b941f38f36ac3d39297e084496e1762)
+        ;
+
+        
+    
+    
+            var circle_marker_2eb2e5b12259e86c0c531bf97f8dc11c = L.circleMarker(
+                [3.1500522830456643, 101.61435379810912],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_bcf60cfcf76add39b97df8f7535c3801 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70efc532a9633983ec55d221a2b86451 = $(`<div id="html_70efc532a9633983ec55d221a2b86451" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_bcf60cfcf76add39b97df8f7535c3801.setContent(html_70efc532a9633983ec55d221a2b86451);
+            
+        
+
+        circle_marker_2eb2e5b12259e86c0c531bf97f8dc11c.bindPopup(popup_bcf60cfcf76add39b97df8f7535c3801)
+        ;
+
+        
+    
+    
+            var circle_marker_37a37789f2c8e88c8711236761fe6870 = L.circleMarker(
+                [3.143857388203837, 101.62370146392],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_23c66e78bf4f07c8f5e01186a5371944 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c5175d486980b8a553e76bb1ad6ba662 = $(`<div id="html_c5175d486980b8a553e76bb1ad6ba662" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_23c66e78bf4f07c8f5e01186a5371944.setContent(html_c5175d486980b8a553e76bb1ad6ba662);
+            
+        
+
+        circle_marker_37a37789f2c8e88c8711236761fe6870.bindPopup(popup_23c66e78bf4f07c8f5e01186a5371944)
+        ;
+
+        
+    
+    
+            var circle_marker_59084c0efcb49259169e8b959b9998ad = L.circleMarker(
+                [3.1438387124607368, 101.62486280143678],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_e5d7c025fdd233d3aaa55b589160f3fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be649948f50288b295d2bf2782b0fda5 = $(`<div id="html_be649948f50288b295d2bf2782b0fda5" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_e5d7c025fdd233d3aaa55b589160f3fb.setContent(html_be649948f50288b295d2bf2782b0fda5);
+            
+        
+
+        circle_marker_59084c0efcb49259169e8b959b9998ad.bindPopup(popup_e5d7c025fdd233d3aaa55b589160f3fb)
+        ;
+
+        
+    
+    
+            var circle_marker_2eaa8681d402a8cb88f2e2907b7e55f7 = L.circleMarker(
+                [3.1443352028737865, 101.62475625175935],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_a08b060591da9d278671649fd90b0686 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f28a0572ad816f78c6279268f0cec870 = $(`<div id="html_f28a0572ad816f78c6279268f0cec870" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_a08b060591da9d278671649fd90b0686.setContent(html_f28a0572ad816f78c6279268f0cec870);
+            
+        
+
+        circle_marker_2eaa8681d402a8cb88f2e2907b7e55f7.bindPopup(popup_a08b060591da9d278671649fd90b0686)
+        ;
+
+        
+    
+    
+            var circle_marker_e322695c99c1ea459bd01b97b899585f = L.circleMarker(
+                [3.149079792993869, 101.62528748698139],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_78f4d696e5c932a8ba39af8fcafd7d85 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ea499c160ed17179ba52a4db58147cbc = $(`<div id="html_ea499c160ed17179ba52a4db58147cbc" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_78f4d696e5c932a8ba39af8fcafd7d85.setContent(html_ea499c160ed17179ba52a4db58147cbc);
+            
+        
+
+        circle_marker_e322695c99c1ea459bd01b97b899585f.bindPopup(popup_78f4d696e5c932a8ba39af8fcafd7d85)
+        ;
+
+        
+    
+    
+            var circle_marker_3430d0f4502c91e420d7ec05f885540f = L.circleMarker(
+                [3.148978919195367, 101.62547854376642],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_3f99e37342e6acd849017ba2d4bba09e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e138e3dedbdb9e283a43d903a537a95 = $(`<div id="html_5e138e3dedbdb9e283a43d903a537a95" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_3f99e37342e6acd849017ba2d4bba09e.setContent(html_5e138e3dedbdb9e283a43d903a537a95);
+            
+        
+
+        circle_marker_3430d0f4502c91e420d7ec05f885540f.bindPopup(popup_3f99e37342e6acd849017ba2d4bba09e)
+        ;
+
+        
+    
+    
+            var circle_marker_4b6474dad3dbbbf1a9e15d7dae59fcff = L.circleMarker(
+                [3.1409625904911884, 101.6395285364908],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_fb9ff63810663c34d825848e3f46c25f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3921d37dd9e9b7135159af7d9d095888 = $(`<div id="html_3921d37dd9e9b7135159af7d9d095888" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_fb9ff63810663c34d825848e3f46c25f.setContent(html_3921d37dd9e9b7135159af7d9d095888);
+            
+        
+
+        circle_marker_4b6474dad3dbbbf1a9e15d7dae59fcff.bindPopup(popup_fb9ff63810663c34d825848e3f46c25f)
+        ;
+
+        
+    
+    
+            var circle_marker_f2e2c54421beba1cafcb8ffa2a1b5cca = L.circleMarker(
+                [3.140668736014527, 101.64028752224591],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_c28b77e3058ced21cbe11a3bc3310b24 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f9ac00cf83a235c56c9d4d562d91f25c = $(`<div id="html_f9ac00cf83a235c56c9d4d562d91f25c" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_c28b77e3058ced21cbe11a3bc3310b24.setContent(html_f9ac00cf83a235c56c9d4d562d91f25c);
+            
+        
+
+        circle_marker_f2e2c54421beba1cafcb8ffa2a1b5cca.bindPopup(popup_c28b77e3058ced21cbe11a3bc3310b24)
+        ;
+
+        
+    
+    
+            var circle_marker_8ca4f3af08f16052c44a45f59b346bf8 = L.circleMarker(
+                [3.1364427768605707, 101.62250174758884],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_1a2af8759c7177788cbae59836a5cbc8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7cba276586508d1b31106d5240ac88c4 = $(`<div id="html_7cba276586508d1b31106d5240ac88c4" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_1a2af8759c7177788cbae59836a5cbc8.setContent(html_7cba276586508d1b31106d5240ac88c4);
+            
+        
+
+        circle_marker_8ca4f3af08f16052c44a45f59b346bf8.bindPopup(popup_1a2af8759c7177788cbae59836a5cbc8)
+        ;
+
+        
+    
+    
+            var circle_marker_3aa308ba40f6758040e014e2e5d18910 = L.circleMarker(
+                [3.1365088597314434, 101.6225464638375],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_36adf80d11f1896c6a88944d50672bf0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec5b83c9c2cc17846eccfa6e4b3583c9 = $(`<div id="html_ec5b83c9c2cc17846eccfa6e4b3583c9" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_36adf80d11f1896c6a88944d50672bf0.setContent(html_ec5b83c9c2cc17846eccfa6e4b3583c9);
+            
+        
+
+        circle_marker_3aa308ba40f6758040e014e2e5d18910.bindPopup(popup_36adf80d11f1896c6a88944d50672bf0)
+        ;
+
+        
+    
+    
+            var circle_marker_9c338a1c45d52226451edb703b038904 = L.circleMarker(
+                [3.1363614766423193, 101.62247454208918],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_bf1695460280c05850f4db4dae4826f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_44690a9d9863d53f5a71949731368538 = $(`<div id="html_44690a9d9863d53f5a71949731368538" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_bf1695460280c05850f4db4dae4826f4.setContent(html_44690a9d9863d53f5a71949731368538);
+            
+        
+
+        circle_marker_9c338a1c45d52226451edb703b038904.bindPopup(popup_bf1695460280c05850f4db4dae4826f4)
+        ;
+
+        
+    
+    
+            var circle_marker_a5a4bfd729e43a52872aeef8beb475ef = L.circleMarker(
+                [3.136408592980919, 101.62269238110348],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_402a180bfbe536e5f05d80db206c0ba8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2981c2414e99a1fbb570147c73602939 = $(`<div id="html_2981c2414e99a1fbb570147c73602939" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_402a180bfbe536e5f05d80db206c0ba8.setContent(html_2981c2414e99a1fbb570147c73602939);
+            
+        
+
+        circle_marker_a5a4bfd729e43a52872aeef8beb475ef.bindPopup(popup_402a180bfbe536e5f05d80db206c0ba8)
+        ;
+
+        
+    
+    
+            var circle_marker_77ad63e3ff016f558190f7ca988f58b9 = L.circleMarker(
+                [3.1363219206083763, 101.62247154480508],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_b0e5f290f29376106e543461d6ccddcf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8fbb5dfc4b7f0ca98cc6ca1161492ae4 = $(`<div id="html_8fbb5dfc4b7f0ca98cc6ca1161492ae4" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_b0e5f290f29376106e543461d6ccddcf.setContent(html_8fbb5dfc4b7f0ca98cc6ca1161492ae4);
+            
+        
+
+        circle_marker_77ad63e3ff016f558190f7ca988f58b9.bindPopup(popup_b0e5f290f29376106e543461d6ccddcf)
+        ;
+
+        
+    
+    
+            var circle_marker_8066d886967c6f521f3a2cad8e25312d = L.circleMarker(
+                [3.1350546432135356, 101.62292749220882],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_50a4b012915d19daf3c2e381024c2b18 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7427f323ea1f70647e3f44550a66fd97 = $(`<div id="html_7427f323ea1f70647e3f44550a66fd97" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_50a4b012915d19daf3c2e381024c2b18.setContent(html_7427f323ea1f70647e3f44550a66fd97);
+            
+        
+
+        circle_marker_8066d886967c6f521f3a2cad8e25312d.bindPopup(popup_50a4b012915d19daf3c2e381024c2b18)
+        ;
+
+        
+    
+    
+            var circle_marker_bb0bdaf5e1be7267fc70a31597b8be2b = L.circleMarker(
+                [3.1435346832232, 101.63788075771798],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_bdc2b9c05f40d524e0693932ab22b630 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fd465be3e73dbb1c083ebc0d7b5c2248 = $(`<div id="html_fd465be3e73dbb1c083ebc0d7b5c2248" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_bdc2b9c05f40d524e0693932ab22b630.setContent(html_fd465be3e73dbb1c083ebc0d7b5c2248);
+            
+        
+
+        circle_marker_bb0bdaf5e1be7267fc70a31597b8be2b.bindPopup(popup_bdc2b9c05f40d524e0693932ab22b630)
+        ;
+
+        
+    
+    
+            var circle_marker_ce5fa8b159dd25f731d01df1b79ec7be = L.circleMarker(
+                [3.1435265858276438, 101.63798437374328],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_c4114f057c967321654650624fefa0bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_15056474e2c6be9fc84e6f59a5e664ee = $(`<div id="html_15056474e2c6be9fc84e6f59a5e664ee" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_c4114f057c967321654650624fefa0bb.setContent(html_15056474e2c6be9fc84e6f59a5e664ee);
+            
+        
+
+        circle_marker_ce5fa8b159dd25f731d01df1b79ec7be.bindPopup(popup_c4114f057c967321654650624fefa0bb)
+        ;
+
+        
+    
+    
+            var circle_marker_81f686f801a49fd564beef2c9091a7e0 = L.circleMarker(
+                [3.143583517105465, 101.63794173727857],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_073889d4cfbf94022dcc4bee476c3161 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dbf1be8f2bd9d9925946852e8cb2ddf1 = $(`<div id="html_dbf1be8f2bd9d9925946852e8cb2ddf1" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_073889d4cfbf94022dcc4bee476c3161.setContent(html_dbf1be8f2bd9d9925946852e8cb2ddf1);
+            
+        
+
+        circle_marker_81f686f801a49fd564beef2c9091a7e0.bindPopup(popup_073889d4cfbf94022dcc4bee476c3161)
+        ;
+
+        
+    
+    
+            var circle_marker_4c1c67d0a9d1b9fd41874c701ab3d01d = L.circleMarker(
+                [3.143471090868235, 101.63800675739789],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_54bf98e422e2646100abbd908ee1fc5d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_924888316ae08e3b8cf99f9245227870 = $(`<div id="html_924888316ae08e3b8cf99f9245227870" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_54bf98e422e2646100abbd908ee1fc5d.setContent(html_924888316ae08e3b8cf99f9245227870);
+            
+        
+
+        circle_marker_4c1c67d0a9d1b9fd41874c701ab3d01d.bindPopup(popup_54bf98e422e2646100abbd908ee1fc5d)
+        ;
+
+        
+    
+    
+            var circle_marker_ccffcaf5770165079cc9d415426ee72b = L.circleMarker(
+                [3.143450434918789, 101.63790751899252],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_3ccdc13f33b2f7f3081c1ef30ec4ca07 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_97495f7b4f558213276472e2e43ee4d8 = $(`<div id="html_97495f7b4f558213276472e2e43ee4d8" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_3ccdc13f33b2f7f3081c1ef30ec4ca07.setContent(html_97495f7b4f558213276472e2e43ee4d8);
+            
+        
+
+        circle_marker_ccffcaf5770165079cc9d415426ee72b.bindPopup(popup_3ccdc13f33b2f7f3081c1ef30ec4ca07)
+        ;
+
+        
+    
+    
+            var circle_marker_224e2d7312ddbac3ecd268d5827c610c = L.circleMarker(
+                [3.1486555831360623, 101.62265466448584],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_d7188e9359b2004569b236db608fc84b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4aaefb99a3496bf6afe18cab7784e45 = $(`<div id="html_c4aaefb99a3496bf6afe18cab7784e45" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_d7188e9359b2004569b236db608fc84b.setContent(html_c4aaefb99a3496bf6afe18cab7784e45);
+            
+        
+
+        circle_marker_224e2d7312ddbac3ecd268d5827c610c.bindPopup(popup_d7188e9359b2004569b236db608fc84b)
+        ;
+
+        
+    
+    
+            var circle_marker_1f6a1209d3b35fdc9b1cb0e15290720b = L.circleMarker(
+                [3.148600730640069, 101.62251690666727],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_2b6726298a91d33d7613fdf98d5be4d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_63318a781b8d12483dc3fe7e782c4adb = $(`<div id="html_63318a781b8d12483dc3fe7e782c4adb" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_2b6726298a91d33d7613fdf98d5be4d6.setContent(html_63318a781b8d12483dc3fe7e782c4adb);
+            
+        
+
+        circle_marker_1f6a1209d3b35fdc9b1cb0e15290720b.bindPopup(popup_2b6726298a91d33d7613fdf98d5be4d6)
+        ;
+
+        
+    
+    
+            var circle_marker_22405909fbcdfe9483b1efee7512bf85 = L.circleMarker(
+                [3.148564117274431, 101.62246811747976],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_c9f870ad7dac84753c5ec7d15713869b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_94f6f3de35a4a207114685a0629067fa = $(`<div id="html_94f6f3de35a4a207114685a0629067fa" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_c9f870ad7dac84753c5ec7d15713869b.setContent(html_94f6f3de35a4a207114685a0629067fa);
+            
+        
+
+        circle_marker_22405909fbcdfe9483b1efee7512bf85.bindPopup(popup_c9f870ad7dac84753c5ec7d15713869b)
+        ;
+
+        
+    
+    
+            var circle_marker_c634a2433606db5b6c50fd7d80a22521 = L.circleMarker(
+                [3.13882477230402, 101.62621118159522],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_710e0942932490fd85f89ab59aca4911 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_97267dbdf8f879af7a7ad32cfb458ae6 = $(`<div id="html_97267dbdf8f879af7a7ad32cfb458ae6" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_710e0942932490fd85f89ab59aca4911.setContent(html_97267dbdf8f879af7a7ad32cfb458ae6);
+            
+        
+
+        circle_marker_c634a2433606db5b6c50fd7d80a22521.bindPopup(popup_710e0942932490fd85f89ab59aca4911)
+        ;
+
+        
+    
+    
+            var circle_marker_e27fdb0b876fc65359bf632482dc93df = L.circleMarker(
+                [3.1503016498745327, 101.61607661428606],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_4d76df661e65d309149910164e57fbda = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5a34937cde006dca6db7af1b3709483f = $(`<div id="html_5a34937cde006dca6db7af1b3709483f" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_4d76df661e65d309149910164e57fbda.setContent(html_5a34937cde006dca6db7af1b3709483f);
+            
+        
+
+        circle_marker_e27fdb0b876fc65359bf632482dc93df.bindPopup(popup_4d76df661e65d309149910164e57fbda)
+        ;
+
+        
+    
+    
+            var circle_marker_b29bad7348f08900f0b93884c2f3cd79 = L.circleMarker(
+                [3.150153220922943, 101.61621689830905],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_031cd61c1a37c4b859cdb0149c325e95 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3590fcb7f4d2ea2115829093afbd18e6 = $(`<div id="html_3590fcb7f4d2ea2115829093afbd18e6" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_031cd61c1a37c4b859cdb0149c325e95.setContent(html_3590fcb7f4d2ea2115829093afbd18e6);
+            
+        
+
+        circle_marker_b29bad7348f08900f0b93884c2f3cd79.bindPopup(popup_031cd61c1a37c4b859cdb0149c325e95)
+        ;
+
+        
+    
+    
+            var circle_marker_74779c437f59073f7891395cfbd43505 = L.circleMarker(
+                [3.150663684020884, 101.61593176948344],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_8929f47934d7aced7aaff0e0fa679e37 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f61c98810342e2648607f2893bae6060 = $(`<div id="html_f61c98810342e2648607f2893bae6060" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_8929f47934d7aced7aaff0e0fa679e37.setContent(html_f61c98810342e2648607f2893bae6060);
+            
+        
+
+        circle_marker_74779c437f59073f7891395cfbd43505.bindPopup(popup_8929f47934d7aced7aaff0e0fa679e37)
+        ;
+
+        
+    
+    
+            var circle_marker_39578634a0559427d17ccac8849a9693 = L.circleMarker(
+                [3.1498252034192467, 101.6178232398264],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_6cc64f97a0e1b14eee018e0150d27bc4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4aa9bf5b67088eff42d3bf4015b7f74f = $(`<div id="html_4aa9bf5b67088eff42d3bf4015b7f74f" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_6cc64f97a0e1b14eee018e0150d27bc4.setContent(html_4aa9bf5b67088eff42d3bf4015b7f74f);
+            
+        
+
+        circle_marker_39578634a0559427d17ccac8849a9693.bindPopup(popup_6cc64f97a0e1b14eee018e0150d27bc4)
+        ;
+
+        
+    
+    
+            var circle_marker_2382e2f0b2b41fadff2bc7214261fb1d = L.circleMarker(
+                [3.1489449646704855, 101.61825096847491],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_61a8cbe7e40561012ae4cc6d93a309bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3f5edd9eabda36d6bad73bbf88050b77 = $(`<div id="html_3f5edd9eabda36d6bad73bbf88050b77" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_61a8cbe7e40561012ae4cc6d93a309bb.setContent(html_3f5edd9eabda36d6bad73bbf88050b77);
+            
+        
+
+        circle_marker_2382e2f0b2b41fadff2bc7214261fb1d.bindPopup(popup_61a8cbe7e40561012ae4cc6d93a309bb)
+        ;
+
+        
+    
+    
+            var circle_marker_8cf64fe46b84369501656a8318223bf2 = L.circleMarker(
+                [3.144510546868206, 101.62127944343757],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_295a5f39e6c1e8b9e619a082c69de9d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a1564930e243e5a8e3f4b5358d3c2365 = $(`<div id="html_a1564930e243e5a8e3f4b5358d3c2365" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_295a5f39e6c1e8b9e619a082c69de9d3.setContent(html_a1564930e243e5a8e3f4b5358d3c2365);
+            
+        
+
+        circle_marker_8cf64fe46b84369501656a8318223bf2.bindPopup(popup_295a5f39e6c1e8b9e619a082c69de9d3)
+        ;
+
+        
+    
+    
+            var circle_marker_fc0495975dc62673589f9b3bdda7cadc = L.circleMarker(
+                [3.1443715973311646, 101.62120582652149],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_df153522132f81bcc1f54ae160247cb8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10a1dd573575ce134b8c39e63b603ff3 = $(`<div id="html_10a1dd573575ce134b8c39e63b603ff3" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_df153522132f81bcc1f54ae160247cb8.setContent(html_10a1dd573575ce134b8c39e63b603ff3);
+            
+        
+
+        circle_marker_fc0495975dc62673589f9b3bdda7cadc.bindPopup(popup_df153522132f81bcc1f54ae160247cb8)
+        ;
+
+        
+    
+    
+            var circle_marker_81b2c48dc10ebf5824e4347fe069009c = L.circleMarker(
+                [3.1306906690603546, 101.62214555713238],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_b167fbde0928c511b2eb5b8eff7ba99f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd8c5e3737d9e460c2b0ae6095878d92 = $(`<div id="html_bd8c5e3737d9e460c2b0ae6095878d92" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_b167fbde0928c511b2eb5b8eff7ba99f.setContent(html_bd8c5e3737d9e460c2b0ae6095878d92);
+            
+        
+
+        circle_marker_81b2c48dc10ebf5824e4347fe069009c.bindPopup(popup_b167fbde0928c511b2eb5b8eff7ba99f)
+        ;
+
+        
+    
+    
+            var circle_marker_2c69d0339375f5ad7950772282a46c4c = L.circleMarker(
+                [3.1309952883944665, 101.62268630043152],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_880919d503b6bf6d8d460411477d1ef0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_37f77bb8b70991815a1fa721c665c805 = $(`<div id="html_37f77bb8b70991815a1fa721c665c805" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_880919d503b6bf6d8d460411477d1ef0.setContent(html_37f77bb8b70991815a1fa721c665c805);
+            
+        
+
+        circle_marker_2c69d0339375f5ad7950772282a46c4c.bindPopup(popup_880919d503b6bf6d8d460411477d1ef0)
+        ;
+
+        
+    
+    
+            var circle_marker_250c6bcf6ad08be57fc9ef5e46d63360 = L.circleMarker(
+                [3.1309639353544982, 101.62254413327916],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_a3828a31bd285c4c4d27d10297dc0116 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4aaa786da55666c1d5d0588564f3596b = $(`<div id="html_4aaa786da55666c1d5d0588564f3596b" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_a3828a31bd285c4c4d27d10297dc0116.setContent(html_4aaa786da55666c1d5d0588564f3596b);
+            
+        
+
+        circle_marker_250c6bcf6ad08be57fc9ef5e46d63360.bindPopup(popup_a3828a31bd285c4c4d27d10297dc0116)
+        ;
+
+        
+    
+    
+            var circle_marker_5244837a9fbd86222083cfe333e3b17d = L.circleMarker(
+                [3.143690762154726, 101.61898986655773],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_05d1a9f688d12178e9a8d0902002865e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b171aa2183ac35b2b740cb2e0fec77b9 = $(`<div id="html_b171aa2183ac35b2b740cb2e0fec77b9" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_05d1a9f688d12178e9a8d0902002865e.setContent(html_b171aa2183ac35b2b740cb2e0fec77b9);
+            
+        
+
+        circle_marker_5244837a9fbd86222083cfe333e3b17d.bindPopup(popup_05d1a9f688d12178e9a8d0902002865e)
+        ;
+
+        
+    
+    
+            var circle_marker_8f62dc2d35dafac4e89ec744fbcbd269 = L.circleMarker(
+                [3.1440293259398335, 101.61938132796895],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_f1d8db30d83afa99f5c47909af5fca20 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b36cadbacb8042929a8f091e073370b7 = $(`<div id="html_b36cadbacb8042929a8f091e073370b7" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_f1d8db30d83afa99f5c47909af5fca20.setContent(html_b36cadbacb8042929a8f091e073370b7);
+            
+        
+
+        circle_marker_8f62dc2d35dafac4e89ec744fbcbd269.bindPopup(popup_f1d8db30d83afa99f5c47909af5fca20)
+        ;
+
+        
+    
+    
+            var circle_marker_54e24aae879066c14c44617a6f7c75a0 = L.circleMarker(
+                [3.143631938690515, 101.61974204494497],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_15034c4559ca153a8c52d8fdeb91eb13 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5ebfffe54836d4353baf22c60dab508f = $(`<div id="html_5ebfffe54836d4353baf22c60dab508f" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_15034c4559ca153a8c52d8fdeb91eb13.setContent(html_5ebfffe54836d4353baf22c60dab508f);
+            
+        
+
+        circle_marker_54e24aae879066c14c44617a6f7c75a0.bindPopup(popup_15034c4559ca153a8c52d8fdeb91eb13)
+        ;
+
+        
+    
+    
+            var circle_marker_7eb253026dd505db1a244d41253bfbfb = L.circleMarker(
+                [3.14387162666572, 101.61956820372812],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_827fe1f423d65d7d587b64a294eee919 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c86ed141451a9af93f2ebb278f8f502 = $(`<div id="html_5c86ed141451a9af93f2ebb278f8f502" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_827fe1f423d65d7d587b64a294eee919.setContent(html_5c86ed141451a9af93f2ebb278f8f502);
+            
+        
+
+        circle_marker_7eb253026dd505db1a244d41253bfbfb.bindPopup(popup_827fe1f423d65d7d587b64a294eee919)
+        ;
+
+        
+    
+    
+            var circle_marker_4a3adf360792fbd7823b32a4df7a9717 = L.circleMarker(
+                [3.1437033815741113, 101.61881004981232],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_5c2a71918cd5c6651205d012e2a3eb83);
+        
+    
+        var popup_3724b92a5491e566982b08993530cfd0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b290b174d0a85af9f9b0751eed8c4a51 = $(`<div id="html_b290b174d0a85af9f9b0751eed8c4a51" style="width: 100.0%; height: 100.0%;">Large tree (Rain Tree / Samanea saman)</div>`)[0];
+                popup_3724b92a5491e566982b08993530cfd0.setContent(html_b290b174d0a85af9f9b0751eed8c4a51);
+            
+        
+
+        circle_marker_4a3adf360792fbd7823b32a4df7a9717.bindPopup(popup_3724b92a5491e566982b08993530cfd0)
+        ;
+
+        
+    
+</script>
+</html>
