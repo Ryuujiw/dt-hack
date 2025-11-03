@@ -13,3 +13,7 @@ notebooks/data/*
 # Local project documentation
 CLAUDE.md
 /data/3d_context
+
+**/uv.lock
+**/cache/
+**/__pycache__/
