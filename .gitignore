@@ -15,3 +15,6 @@ CLAUDE.md
 /data/3d_context
 
 __pycache__/
+
+# Ignore locally downloaded streetview files
+notebooks/streetview/*
