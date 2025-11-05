@@ -20,17 +20,17 @@ ZOO_ANIMALS = {
             "enclosure": "African Savanna - Section A",
             "species": "African Lion",
             "weight": "190 kg",
-            "special_notes": "Alpha male of the pride"
+            "special_notes": "Alpha male of the pride",
         },
         {
             "name": "Nala",
             "age": 6,
-            "gender": "female", 
+            "gender": "female",
             "enclosure": "African Savanna - Section A",
             "species": "African Lion",
             "weight": "130 kg",
-            "special_notes": "Mother of two cubs"
-        }
+            "special_notes": "Mother of two cubs",
+        },
     ],
     "polar_bears": [
         {
@@ -40,37 +40,37 @@ ZOO_ANIMALS = {
             "enclosure": "Polar Paradise - North Pool",
             "species": "Polar Bear",
             "weight": "450 kg",
-            "special_notes": "Excellent swimmer, loves playing in water"
+            "special_notes": "Excellent swimmer, loves playing in water",
         },
         {
             "name": "Snow",
             "age": 9,
             "gender": "female",
-            "enclosure": "Polar Paradise - South Pool", 
+            "enclosure": "Polar Paradise - South Pool",
             "species": "Polar Bear",
             "weight": "280 kg",
-            "special_notes": "Recently gave birth to a cub"
-        }
+            "special_notes": "Recently gave birth to a cub",
+        },
     ],
     "elephants": [
         {
-            "name": "Dumbo", 
+            "name": "Dumbo",
             "age": 25,
             "gender": "male",
             "enclosure": "Elephant Valley - Main Exhibit",
             "species": "African Elephant",
             "weight": "5500 kg",
-            "special_notes": "Largest elephant in our zoo"
+            "special_notes": "Largest elephant in our zoo",
         },
         {
             "name": "Ellie",
             "age": 18,
             "gender": "female",
             "enclosure": "Elephant Valley - Family Area",
-            "species": "African Elephant", 
+            "species": "African Elephant",
             "weight": "3200 kg",
-            "special_notes": "Very gentle and loves interacting with visitors"
-        }
+            "special_notes": "Very gentle and loves interacting with visitors",
+        },
     ],
     "giraffes": [
         {
@@ -80,7 +80,7 @@ ZOO_ANIMALS = {
             "enclosure": "Giraffe Heights - Tower View",
             "species": "Masai Giraffe",
             "weight": "1200 kg",
-            "special_notes": "Tallest animal in the zoo at 5.5 meters"
+            "special_notes": "Tallest animal in the zoo at 5.5 meters",
         }
     ],
     "penguins": [
@@ -91,18 +91,18 @@ ZOO_ANIMALS = {
             "enclosure": "Penguin Cove - Ice Slide Area",
             "species": "Emperor Penguin",
             "weight": "25 kg",
-            "special_notes": "Leader of the penguin colony"
+            "special_notes": "Leader of the penguin colony",
         },
         {
             "name": "Pebble",
             "age": 3,
             "gender": "female",
-            "enclosure": "Penguin Cove - Ice Slide Area", 
+            "enclosure": "Penguin Cove - Ice Slide Area",
             "species": "Emperor Penguin",
             "weight": "20 kg",
-            "special_notes": "Known for her playful personality"
-        }
-    ]
+            "special_notes": "Known for her playful personality",
+        },
+    ],
 }
 
 

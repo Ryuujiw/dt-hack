@@ -5,7 +5,10 @@ from dotenv import load_dotenv
 
 from google.adk import Agent
 from google.adk.agents import SequentialAgent
-from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StreamableHTTPConnectionParams
+from google.adk.tools.mcp_tool.mcp_toolset import (
+    MCPToolset,
+    StreamableHTTPConnectionParams,
+)
 from google.adk.tools.tool_context import ToolContext
 from google.adk.tools.langchain_tool import LangchainTool
 
@@ -26,9 +29,7 @@ model_name = os.getenv("MODEL")
 
 
 # Greet user and save their prompt
-def add_prompt_to_state(
-    tool_context: ToolContext, prompt: str
-) -> dict[str, str]:
+def add_prompt_to_state(tool_context: ToolContext, prompt: str) -> dict[str, str]:
     """Saves the user's initial prompt to the state."""
     tool_context.state["PROMPT"] = prompt
     logging.info(f"[State updated] Added to PROMPT: {prompt}")
@@ -44,16 +45,14 @@ if not mcp_server_url:
 def get_id_token():
     """Get an ID token to authenticate with the MCP server."""
     target_url = os.getenv("MCP_SERVER_URL")
-    audience = target_url.split('/mcp/')[0]
+    audience = target_url.split("/mcp/")[0]
     request = google.auth.transport.requests.Request()
     id_token = google.oauth2.id_token.fetch_id_token(request, audience)
     return id_token
 
 
 mcp_tools = MCPToolset(
-    connection_params=StreamableHTTPConnectionParams(
-        url=mcp_server_url
-    )
+    connection_params=StreamableHTTPConnectionParams(url=mcp_server_url)
 )
 
 # Authenticated MCP
@@ -91,11 +90,8 @@ comprehensive_researcher = Agent(
     PROMPT:
     {{ PROMPT }}
     """,
-    tools=[
-        mcp_tools,
-        wikipedia_tool
-    ],
-    output_key="research_data" # A key to store the combined findings
+    tools=[mcp_tools, wikipedia_tool],
+    output_key="research_data",  # A key to store the combined findings
 )
 
 # 2. Response Formatter Agent
@@ -114,7 +110,7 @@ response_formatter = Agent(
 
     RESEARCH_DATA:
     {{ research_data }}
-    """
+    """,
 )
 
 # The Workflow Agent
@@ -122,9 +118,9 @@ tour_guide_workflow = SequentialAgent(
     name="tour_guide_workflow",
     description="The main workflow for handling a user's request about an animal.",
     sub_agents=[
-        comprehensive_researcher, # Step 1: Gather all data
-        response_formatter,       # Step 2: Format the final response
-    ]
+        comprehensive_researcher,  # Step 1: Gather all data
+        response_formatter,  # Step 2: Format the final response
+    ],
 )
 
 # Main Root Agent
@@ -138,5 +134,5 @@ root_agent = Agent(
     After using the tool, transfer control to the 'tour_guide_workflow' agent.
     """,
     tools=[add_prompt_to_state],
-    sub_agents=[tour_guide_workflow]
+    sub_agents=[tour_guide_workflow],
 )

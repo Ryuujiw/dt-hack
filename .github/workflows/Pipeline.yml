@@ -1,0 +1,41 @@
+# create a pipeline that runs on push and pull request events
+name: CI-Pipeline
+
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+        branches:
+            - master
+            - feat/PipelineSetup # TODO
+
+env:
+    GCP_REGION: ""
+    PROJECT_ID: ""
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up Python
+              uses: actions/setup-python@v2
+              with:
+                  python-version: "3.11"
+
+            - name: Install UV package
+              run: pip install uv
+
+            - name: Install dependencies
+              working-directory: ReLeaf_Agent
+              run: uv sync
+
+            - name: Run Black
+              working-directory: ReLeaf_Agent
+              run: |
+                  pip install black
+                  black .

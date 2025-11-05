@@ -24,5 +24,6 @@ async def test_server():
         # result = await client.call_tool("subtract", {"a": 10, "b": 3})
         # print(f"<<< ✅ Result: {result.content[0].text}")
 
+
 if __name__ == "__main__":
     asyncio.run(test_server())
