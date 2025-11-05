@@ -1,5 +1,4 @@
 #!/bin/bash
-# ReLeaf Agent Auto-Deployment Script
 
 set -e  # Exit on any error
 
@@ -31,23 +30,23 @@ gcloud iam service-accounts create ${SA_NAME} \
     --display-name="ReLeaf Service Account" \
     --quiet || echo "Service account already exists"
 
-# # Set permissions
-# echo "🔐 Setting up permissions..."
-# gcloud projects add-iam-policy-binding $PROJECT_ID \
-#     --member="serviceAccount:$SERVICE_ACCOUNT" \
-#     --role="roles/run.invoker" \
-#     --quiet
 
-# gcloud projects add-iam-policy-binding $PROJECT_ID \
-#     --member="serviceAccount:$SERVICE_ACCOUNT" \
-#     --role="roles/aiplatform.user" \
-#     --quiet
+# Set permissions
+echo "🔐 Setting up permissions..."
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+    --member="serviceAccount:$SERVICE_ACCOUNT" \
+    --role="roles/run.invoker" \
+    --quiet
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+    --member="serviceAccount:$SERVICE_ACCOUNT" \
+    --role="roles/aiplatform.user" \
+    --quiet
 
 # Deploy MCP Server
 echo "🔌 Deploying ReLeaf MCP Server..."
-cd mcp
 gcloud run deploy releaf-mcp-server \
-    --source . \
+    --source ./ReLeaf_Agent/mcp \
     --region=$REGION \
     --allow-unauthenticated \
     --quiet
@@ -58,8 +57,7 @@ echo "✅ MCP Server deployed at: $MCP_URL"
 
 # Update agent configuration
 echo "⚙️  Configuring ReLeaf Agent..."
-cd ..
-cat > .env << EOF
+cat > ./ReLeaf_Agent/.env << EOF
 MODEL="gemini-2.5-flash"
 MCP_SERVER_URL=$MCP_URL
 EOF
@@ -71,14 +69,14 @@ uvx --from google-adk adk deploy cloud_run \
     --region=$REGION \
     --service_name=releaf-agent \
     --with_ui \
-    . \
+    ./ReLeaf_Agent \
     -- \
     --labels=app=releaf-agent \
     --service-account=$SERVICE_ACCOUNT \
     --allow-unauthenticated
 
-echo "🎉 Deployment Complete!"
 echo ""
-echo "📋 Your ReLeaf Agent URLs:"
-echo "🤖 Agent: https://releaf-agent-${PROJECT_NUMBER}.${REGION}.run.app"
+echo "🎉 Deployment Complete!"
 echo "🔌 MCP Server: https://releaf-mcp-server-${PROJECT_NUMBER}.${REGION}.run.app/mcp/"
+echo "🤖 Agent: https://releaf-agent-${PROJECT_NUMBER}.${REGION}.run.app"
+echo ""

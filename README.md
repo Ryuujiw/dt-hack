@@ -1,38 +1,15 @@
-# Setup guide
+# Team ReLeaf the Earth
 
-## Run Docker container
+# URL
+- **MCP Server** https://releaf-mcp-server-${PROJECT_NUMBER}.${REGION}.run.app/mcp/"
+- **Agent** https://releaf-agent-${PROJECT_NUMBER}.${REGION}.run.app"
 
-Ensure that docker desktop is installed.
+Kindly launch the Agent URL in your browser and start chatting with the agent!
 
-Change directory to location of notebook file and run:
+## 🎯 Features
 
-For Windows
+- **Placeholder**: placeholder
 
-```
-docker run --rm -it -p 8888:8888 -v "%cd%":/home/jovyan/work gboeing/osmnx:latest
-```
+## 📖 Example Prompts
 
-For Linux
-
-```
-docker run --rm -it -p 8888:8888 -v "$PWD":/home/jovyan/work gboeing/osmnx:latest
-```
-
-## Run bash
-
-For Windows
-
-```
-docker run --rm -it -v "%cd%":/home/jovyan/work gboeing/osmnx:latest /bin/bash
-```
-
-For Linux
-
-```
-docker run --rm -it -v "$PWD":/home/jovyan/work gboeing/osmnx:latest /bin/bash
-```
-
-## Reference
-
-- Github with full examples: https://github.com/gboeing/osmnx-examples
-- Docker container: https://hub.docker.com/r/gboeing/osmnx
+- "placeholder"
