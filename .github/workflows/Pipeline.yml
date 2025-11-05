@@ -1,4 +1,3 @@
-# create a pipeline that runs on push and pull request events
 name: CI-Pipeline
 
 on:
@@ -11,12 +10,14 @@ on:
             - feat/PipelineSetup # TODO
 
 env:
-    GCP_REGION: ""
-    PROJECT_ID: ""
+    GCP_REGION: "us-central1"
+    PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+    SA_NAME: "releaf-service"
 
 jobs:
-    build:
+    deploy:
         runs-on: ubuntu-latest
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
         steps:
             - name: Checkout code
@@ -34,8 +35,78 @@ jobs:
               working-directory: ReLeaf_Agent
               run: uv sync
 
-            - name: Run Black
-              working-directory: ReLeaf_Agent
+            - name: Authenticate to Google Cloud
+              uses: google-github-actions/auth@v2
+              with:
+                  credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+            - name: Set up Google Cloud SDK
+              uses: google-github-actions/setup-gcloud@v2
+              with:
+                  project_id: ${{ env.PROJECT_ID }}
+
+            - name: Set up environment variables
               run: |
-                  pip install black
-                  black .
+                  echo "PROJECT_NUMBER=$(gcloud projects describe ${{ env.PROJECT_ID }} --format='value(projectNumber)')" >> $GITHUB_ENV
+                  echo "SERVICE_ACCOUNT=${{ env.SA_NAME }}@${{ env.PROJECT_ID }}.iam.gserviceaccount.com" >> $GITHUB_ENV
+
+            - name: Enable Google Cloud APIs
+              run: |
+                  echo "🔧 Enabling Google Cloud APIs..."
+                  gcloud services enable \
+                      run.googleapis.com \
+                      artifactregistry.googleapis.com \
+                      cloudbuild.googleapis.com \
+                      aiplatform.googleapis.com \
+                      compute.googleapis.com
+
+            - name: Create service account
+              run: |
+                  echo "👤 Creating service account..."
+                  gcloud iam service-accounts create ${{ env.SA_NAME }} \
+                      --display-name="ReLeaf Service Account" \
+                      --quiet || echo "Service account already exists"
+
+            - name: Deploy MCP Server
+              run: |
+                  echo "🔌 Deploying ReLeaf MCP Server..."
+                  cd ReLeaf_Agent/mcp
+                  gcloud run deploy releaf-mcp-server \
+                      --source . \
+                      --region=${{ env.GCP_REGION }} \
+                      --allow-unauthenticated \
+                      --quiet
+
+            - name: Configure ReLeaf Agent
+              run: |
+                  echo "⚙️ Configuring ReLeaf Agent..."
+                  cd ReLeaf_Agent
+                  MCP_URL="https://releaf-mcp-server-${PROJECT_NUMBER}.${{ env.GCP_REGION }}.run.app/mcp/"
+                  cat > .env << EOF
+                  MODEL="gemini-2.5-flash"
+                  MCP_SERVER_URL=$MCP_URL
+                  EOF
+                  echo "✅ MCP Server will be available at: $MCP_URL"
+
+            - name: Install ADK and deploy ReLeaf Agent
+              run: |
+                  echo "🤖 Installing ADK and deploying ReLeaf Agent..."
+                  cd ReLeaf_Agent
+                  uvx --from google-adk adk deploy cloud_run \
+                      --project=${{ env.PROJECT_ID }} \
+                      --region=${{ env.GCP_REGION }} \
+                      --service_name=releaf-agent \
+                      --with_ui \
+                      . \
+                      -- \
+                      --labels=app=releaf-agent \
+                      --service-account=${{ env.SERVICE_ACCOUNT }} \
+                      --allow-unauthenticated
+
+            - name: Display deployment URLs
+              run: |
+                  echo "🎉 Deployment Complete!"
+                  echo ""
+                  echo "📋 Your ReLeaf Agent URLs:"
+                  echo "🤖 Agent: https://releaf-agent-${PROJECT_NUMBER}.${{ env.GCP_REGION }}.run.app"
+                  echo "🔌 MCP Server: $MCP_URL"
