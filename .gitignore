@@ -15,3 +15,8 @@ CLAUDE.md
 /data/3d_context
 
 .env
+/urban_tree_planting/config/__pycache__
+/urban_tree_planting/core/__pycache__
+/urban_tree_planting/pipeline/__pycache__
+/urban_tree_planting/utils/__pycache__
+/urban_tree_planting/models/__pycache__
