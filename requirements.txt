@@ -1,0 +1,25 @@
+# Urban Tree Planting Analysis - Production Dependencies
+# Python 3.8+
+
+# Core data processing
+numpy>=1.21.0
+scipy>=1.7.0
+
+# Image processing
+Pillow>=9.0.0
+opencv-python>=4.5.0
+
+# Geospatial analysis
+geopandas>=0.10.0
+shapely>=1.8.0
+osmnx>=1.2.0
+
+# Visualization
+matplotlib>=3.5.0
+
+# HTTP requests
+requests>=2.27.0
+
+# Optional: Testing
+pytest>=7.0.0
+pytest-cov>=3.0.0
