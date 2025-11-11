@@ -61,8 +61,8 @@ gcloud config set project $PROJECT_ID
 
 2. **Run deployment:**
 ```bash
-chmod +x ./ReLeaf_Agent/deployment.bash
-./ReLeaf_Agent/deployment.bash
+chmod +x ./agent_deployment.bash
+./agent_deployment.bash
 ```
 
 3. Launch the Agent in your browser and start chatting!

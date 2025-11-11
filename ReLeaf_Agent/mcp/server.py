@@ -3,12 +3,46 @@ import logging
 import os
 from typing import Dict, List, Optional
 
+from geopy.geocoders import Nominatim
+from geopy.exc import GeocoderTimedOut, GeocoderServiceError
+
 from fastmcp import FastMCP
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(format="[%(levelname)s]: %(message)s", level=logging.INFO)
 
 mcp = FastMCP("Tree Planting Agent MCP Server on Cloud Run")
+
+
+@mcp.tool()
+def search_all_matching_location_based_on_keyword(
+    keyword, max_results=5
+) -> Dict[str, tuple]:
+    """
+    Search for addresses based on a keyword using GeoPy + Nominatim.
+    :param keyword: Search term (e.g., 'Menara LGB', 'Menara OBYU')
+    :param max_results: Maximum number of results to return
+    :return: List of (address, latitude, longitude) tuples
+    """
+    keyword = keyword.strip()
+    try:
+        geolocator = Nominatim(user_agent="geo_search_app", timeout=10)
+        locations = geolocator.geocode(
+            keyword, exactly_one=False, limit=max_results, addressdetails=True
+        )
+        if not locations:
+            print("No results found.")
+            return {}
+        results = {}
+        for loc in locations:
+            results[loc.address] = (loc.latitude, loc.longitude)
+        return results
+    except (GeocoderTimedOut, GeocoderServiceError) as e:
+        print(f"Geocoding service error: {e}")
+        return {}
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+        return {}
 
 
 @mcp.tool()
@@ -36,48 +70,6 @@ PLANTING CONSIDERATIONS:
 • Maintain 30m distance from buildings for large trees
 • Consider underground utilities when selecting planting spots
 • Ensure adequate water drainage for flood-prone areas"""
-
-
-@mcp.tool()
-def get_existing_trees_info() -> str:
-    """Get information about existing trees in the Menara LGB area."""
-    return """EXISTING TREE INVENTORY NEAR MENARA LGB:
-
-CURRENT TREE COVERAGE:
-• Sparse tree coverage around the immediate building area
-• Limited shade trees along pedestrian walkways
-• Few large canopy trees in parking areas
-• Gaps in green coverage along main road frontage
-
-IDENTIFIED GAPS:
-• Insufficient shade coverage for pedestrian areas
-• Limited natural cooling around building entrances
-• Poor air quality buffering from traffic on Jalan Damansara
-• Minimal stormwater management through urban forestry
-
-IMPROVEMENT OPPORTUNITIES:
-• Add 15-20 medium to large canopy trees
-• Focus on high-traffic pedestrian zones
-• Create green corridors connecting to nearby parks
-• Enhance building microclimatic conditions
-• Improve urban heat island effect mitigation"""
-
-
-@mcp.tool()
-def get_tree_care_instructions(species_name: str) -> str:
-    """Get specific care instructions for a tree species."""
-    care_guide = {
-        "Rain Tree": "Water deeply 2-3 times per week during establishment. Requires minimal pruning. Very hardy once established. Monitor for pests during flowering season.",
-        "Angsana": "Regular watering during dry periods. Prune annually after flowering to maintain shape. Watch for root spread near buildings.",
-        "Yellow Flame": "Moderate watering needs. Prune to prevent branch breakage. Excellent urban tolerance.",
-        "Sea Apple": "High water requirements. Minimal pruning needed. Native species - very low maintenance.",
-        "Tembusu": "Drought tolerant - water only during extended dry periods. Light annual pruning. Excellent for urban environments.",
-    }
-
-    return care_guide.get(
-        species_name,
-        f"Care instructions for {species_name} are not available in our database. Please consult with a local arborist for specific guidance.",
-    )
 
 
 if __name__ == "__main__":

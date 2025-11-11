@@ -5,4 +5,5 @@ description = "Example of deploying an MCP server on Cloud Run"
 requires-python = ">=3.10"
 dependencies = [
     "fastmcp==2.11.2",
+    "geopy==2.4.1"
 ]
