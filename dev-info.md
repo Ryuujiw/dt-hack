@@ -55,7 +55,7 @@ docker run --rm -it -v "$PWD":/home/jovyan/work gboeing/osmnx:latest /bin/bash
 
 1. **Set your project:**
 ```bash
-export PROJECT_ID="your-project-id"
+export PROJECT_ID="us-con-gcp-sbx-0001190-100925"
 gcloud config set project $PROJECT_ID
 ```
 
