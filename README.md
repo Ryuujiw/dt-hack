@@ -4,7 +4,8 @@
 - **MCP Server** https://releaf-mcp-server-${PROJECT_NUMBER}.${REGION}.run.app/mcp/"
 - **Agent** https://releaf-agent-${PROJECT_NUMBER}.${REGION}.run.app"
 
-Kindly launch the Agent URL in your browser and start chatting with the agent!
+Kindly run `gcloud beta run services proxy releaf-agent --port=8080 --region=us-central1` 
+and Click the proxied link to to launch the Agent URL in your browser and start chatting with the agent!
 
 ## 🎯 Features
 

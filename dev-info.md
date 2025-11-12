@@ -65,4 +65,7 @@ chmod +x ./agent_deployment.bash
 ./agent_deployment.bash
 ```
 
-3. Launch the Agent in your browser and start chatting!
+4. run `gcloud beta run services proxy releaf-agent --port=8080 --region=us-central1` 
+   in gcloud console.
+
+3. Click the proxied link to launch the Agent in your browser and start chatting!

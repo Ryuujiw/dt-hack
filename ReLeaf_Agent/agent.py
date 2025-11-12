@@ -35,15 +35,26 @@ def add_prompt_to_state(tool_context: ToolContext, prompt: str) -> dict[str, str
     logging.info(f"[State updated] Added to PROMPT: {prompt}")
     return {"status": "success"}
 
+def get_id_token():
+    """Get an ID token to authenticate with the MCP server."""
+    target_url = os.getenv("MCP_SERVER_URL")
+    audience = target_url.split('/mcp/')[0]
+    request = google.auth.transport.requests.Request()
+    id_token = google.oauth2.id_token.fetch_id_token(request, audience)
+    return id_token
 
 # Configuring the MCP Tool to connect to the Tree Planting Agent MCP server
 mcp_server_url = os.getenv("MCP_SERVER_URL")
 if not mcp_server_url:
     raise ValueError("The environment variable MCP_SERVER_URL is not set.")
 
-
 mcp_tools = MCPToolset(
-    connection_params=StreamableHTTPConnectionParams(url=mcp_server_url)
+    connection_params=StreamableHTTPConnectionParams(
+        url=mcp_server_url,
+        headers={
+            "Authorization": f"Bearer {get_id_token()}",
+        },
+    ),
 )
 
 # Configuring the Wikipedia Tool
