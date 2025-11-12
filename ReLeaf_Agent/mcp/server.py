@@ -1,12 +1,11 @@
 import asyncio
 import logging
 import os
-from typing import Dict, List, Optional
-
-from geopy.geocoders import Nominatim
-from geopy.exc import GeocoderTimedOut, GeocoderServiceError
+from typing import Dict
 
 from fastmcp import FastMCP
+
+from geocoding_search import GeocodingSearch
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(format="[%(levelname)s]: %(message)s", level=logging.INFO)
@@ -15,9 +14,7 @@ mcp = FastMCP("Tree Planting Agent MCP Server on Cloud Run")
 
 
 @mcp.tool()
-def search_all_matching_location_based_on_keyword(
-    keyword, max_results=5
-) -> Dict[str, tuple]:
+def search_all_matching_location_based_on_keyword(keyword) -> Dict[str, tuple]:
     """
     Search for addresses based on a keyword using GeoPy + Nominatim.
     :param keyword: Search term (e.g., 'Menara LGB', 'Menara OBYU')
@@ -26,22 +23,10 @@ def search_all_matching_location_based_on_keyword(
     """
     keyword = keyword.strip()
     try:
-        geolocator = Nominatim(user_agent="geo_search_app", timeout=10)
-        locations = geolocator.geocode(
-            keyword, exactly_one=False, limit=max_results, addressdetails=True
-        )
-        if not locations:
-            print("No results found.")
-            return {}
-        results = {}
-        for loc in locations:
-            results[loc.address] = (loc.latitude, loc.longitude)
-        return results
-    except (GeocoderTimedOut, GeocoderServiceError) as e:
-        print(f"Geocoding service error: {e}")
-        return {}
-    except Exception as e:
-        print(f"Unexpected error: {e}")
+        geocoder = GeocodingSearch()
+        return geocoder.search_address(keyword)
+    except ValueError as e:
+        logger.error(f"Error: {e}")
         return {}
 
 
