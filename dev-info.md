@@ -55,14 +55,17 @@ docker run --rm -it -v "$PWD":/home/jovyan/work gboeing/osmnx:latest /bin/bash
 
 1. **Set your project:**
 ```bash
-export PROJECT_ID="your-project-id"
+export PROJECT_ID="us-con-gcp-sbx-0001190-100925"
 gcloud config set project $PROJECT_ID
 ```
 
 2. **Run deployment:**
 ```bash
-chmod +x ./ReLeaf_Agent/deployment.bash
-./ReLeaf_Agent/deployment.bash
+chmod +x ./agent_deployment.bash
+./agent_deployment.bash
 ```
 
-3. Launch the Agent in your browser and start chatting!
+4. run `gcloud beta run services proxy releaf-agent --port=8080 --region=us-central1` 
+   in gcloud console.
+
+3. Click the proxied link to launch the Agent in your browser and start chatting!

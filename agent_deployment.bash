@@ -15,33 +15,34 @@ echo "📋 Project: $PROJECT_ID"
 echo "📋 Project Number: $PROJECT_NUMBER"
 echo "📋 Service Account: $SERVICE_ACCOUNT"
 
-# Enable required APIs
-echo "🔧 Enabling Google Cloud APIs..."
-gcloud services enable \
-    run.googleapis.com \
-    artifactregistry.googleapis.com \
-    cloudbuild.googleapis.com \
-    aiplatform.googleapis.com \
-    compute.googleapis.com
+# Done
+    # # Enable required APIs
+    # echo "🔧 Enabling Google Cloud APIs..."
+    # gcloud services enable \
+    #     run.googleapis.com \
+    #     artifactregistry.googleapis.com \
+    #     cloudbuild.googleapis.com \
+    #     aiplatform.googleapis.com \
+    #     compute.googleapis.com
 
-# Create service account
-echo "👤 Creating service account..."
-gcloud iam service-accounts create ${SA_NAME} \
-    --display-name="ReLeaf Service Account" \
-    --quiet || echo "Service account already exists"
+    # # Create service account
+    # echo "👤 Creating service account..."
+    # gcloud iam service-accounts create ${SA_NAME} \
+    #     --display-name="ReLeaf Service Account" \
+    #     --quiet || echo "Service account already exists"
 
 
-# Set permissions
-echo "🔐 Setting up permissions..."
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member="serviceAccount:$SERVICE_ACCOUNT" \
-    --role="roles/run.invoker" \
-    --quiet
+    # # Set permissions
+    # echo "🔐 Setting up permissions..."
+    # gcloud projects add-iam-policy-binding $PROJECT_ID \
+    #     --member="serviceAccount:$SERVICE_ACCOUNT" \
+    #     --role="roles/run.invoker" \
+    #     --quiet
 
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member="serviceAccount:$SERVICE_ACCOUNT" \
-    --role="roles/aiplatform.user" \
-    --quiet
+    # gcloud projects add-iam-policy-binding $PROJECT_ID \
+    #     --member="serviceAccount:$SERVICE_ACCOUNT" \
+    #     --role="roles/aiplatform.user" \
+    #     --quiet
 
 # Deploy MCP Server
 echo "🔌 Deploying ReLeaf MCP Server..."
