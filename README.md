@@ -1,11 +1,11 @@
 # Team ReLeaf the Earth x Urban Tree Planting Analysis System
 
 # URL
-- **MCP Server** https://releaf-mcp-server-${PROJECT_NUMBER}.${REGION}.run.app/mcp/"
-- **Agent** https://releaf-agent-${PROJECT_NUMBER}.${REGION}.run.app"
+- **MCP Server**  https://releaf-mcp-server-254863210019.us-central1.run.app/mcp/
+- **Agent** https://releaf-agent-254863210019.us-central1.run.app
 
 Kindly run `gcloud beta run services proxy releaf-agent --port=8080 --region=us-central1` 
-and Click the proxied link to to launch the Agent URL in your browser and start chatting with the agent!
+and click the proxied link to to launch the Agent in Google Cloud Shell from your browser and start chatting with the agent!
 
 ## 🎯 Features
 
