@@ -26,3 +26,7 @@ ReLeaf_Agent/mcp/INTEGRATION_SUMMARY.md
 ReLeaf_Agent/mcp/urban_tree_planting/.DS_Store
 ReLeaf_Agent/AGENT_WORKFLOW.md
 ReLeaf_Agent/mcp/urban_tree_planting/heatmap_README.md
+
+**/node_modules/
+**/dist/
+**/package-lock.json
