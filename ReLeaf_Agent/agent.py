@@ -54,6 +54,7 @@ mcp_tools = MCPToolset(
         headers={
             "Authorization": f"Bearer {get_id_token()}",
         },
+        timeout=300,  # 5 minutes timeout for long-running analysis
     ),
 )
 
@@ -66,26 +67,54 @@ wikipedia_tool = LangchainTool(
 comprehensive_researcher = Agent(
     name="comprehensive_researcher",
     model=model_name,
-    description="The primary researcher that can access both internal data about existing planted trees in area of Kuala Lumpur or Selangor, Malaysia and external knowledge from Wikipedia.",
+    description="The primary researcher that can access both internal data about tree planting analysis in Kuala Lumpur or Selangor, Malaysia and external knowledge from Wikipedia.",
     instruction="""
-    You are a helpful research assistant. Your goal is to fully answer the user's PROMPT.
-    You have access to two tools:
-    1. A tool for getting user prompt and find the address with its latitude and longitude, and getting specific data about existing planted trees in Kuala Lumpur or Selangor, Malaysia and the suggestions for
-    the area where more trees can be planted in the area.
-    2. A tool for searching Wikipedia for general knowledge (facts, lifespan, diet, habitat).
+    You are a helpful research assistant for tree planting recommendations. Your goal is to fully answer the user's PROMPT.
+    
+    You have access to three MCP tools and one Wikipedia tool:
+    1. search_all_matching_location_based_on_keyword - Find locations by keyword/address
+    2. analyze_tree_planting_opportunities - Analyze a specific location for tree planting
+    3. get_tree_species_recommendations - Get suitable tree species for the area
+    4. Wikipedia - Search for general tree knowledge (species info, benefits, care)
 
-    First, analyze the user's PROMPT.
-    - If user provides a location-related query about tree planting in Kuala Lumpur or Selangor, Malaysia, 
-      first find the location using the MCP tool. If the location is not found, inform the user that no data 
-      is available for that location. If there are more than one location found, confirm with user which
-      location is the correct one. If there is only one location, proceed to get the data about existing 
-      planted trees and suggestions for planting more trees in that area.
-    - If the prompt can be answered by only one tool, use that tool.
-    - If the prompt is complex and requires information from both the tree's database AND Wikipedia,
-      you MUST use both tools to gather all necessary information.
-    - Use the Gemini model's capabilities to reason through the steps needed to answer the prompt completely.
-    - Synthesize the results from the tool(s) you use into preliminary data outputs.
-
+    WORKFLOW - Follow this sequence for location-based queries:
+    
+    STEP 1: LOCATION SEARCH
+    - If user provides a location query (building, landmark, area in KL/Selangor):
+      → Use 'search_all_matching_location_based_on_keyword' with the location keyword
+      → If NO results found: inform user location not available
+      → If MULTIPLE results: confirm with user which location is correct (show options)
+      → If ONE result: proceed to Step 2
+    
+    STEP 2: ANALYZE LOCATION
+    - Once you have the correct location (latitude, longitude, name):
+      → Use 'analyze_tree_planting_opportunities' with the lat/lon/name
+      → This will return analysis results including:
+        * Satellite imagery analysis
+        * Detected vegetation coverage
+        * Shadow patterns
+        * Priority scores for planting zones
+        * Visualization file paths
+      → Store this analysis data for the response
+    
+    STEP 3: GET TREE RECOMMENDATIONS
+    - After analyzing the location:
+      → Use 'get_tree_species_recommendations' to get suitable tree species
+      → This returns species suitable for Kuala Lumpur climate
+      → Include species characteristics, growth requirements, benefits
+    
+    STEP 4: ENRICH WITH WIKIPEDIA (Optional)
+    - If user asks about specific tree species or general tree information:
+      → Use Wikipedia to get additional facts (habitat, lifespan, ecology)
+      → Supplement the MCP recommendations with general knowledge
+    
+    IMPORTANT NOTES:
+    - Always follow the sequence: Search → Analyze → Recommendations
+    - Pass the exact latitude, longitude, and location name from search results to analyze tool
+    - The analyze tool generates visualization files - mention these in your output
+    - Synthesize all tool results into comprehensive preliminary data
+    - If analysis fails or errors, report the issue to the user
+    
     PROMPT:
     {{ PROMPT }}
     """,
@@ -105,6 +134,25 @@ response_formatter = Agent(
     - First, present the specific information from the tree planting data (like species, 
     locations, and care instructions) in the location user provided.
     - Then, add the interesting general facts from the research.
+    - CRITICAL: If the research data contains 'visualization_urls', you MUST embed the analysis map using HTML.
+      Format it exactly like this:
+      
+      "📊 **Detailed Analysis Visualization**
+      
+      <img src='[analysis_map_url]' style='max-width: 100%; height: auto; border-radius: 8px; margin: 10px 0;' alt='Tree Planting Analysis Map'/>
+      
+      This 6-panel visualization shows:
+      1. Original satellite imagery
+      2. Detected vegetation (NDVI analysis)
+      3. Shadow patterns (sun exposure)
+      4. Street network and building footprints
+      5. Priority scores (color-coded zones)
+      6. Final recommended planting locations
+      "
+      
+    - Replace [analysis_map_url] with the actual URL from visualization_urls['analysis_map']
+    - Do NOT show the component breakdown image - it's stored for reference only
+    - Always use <img> tags with the exact style attribute shown above
     - If some information is missing, just present the information you have.
     - Be conversational and engaging.
 

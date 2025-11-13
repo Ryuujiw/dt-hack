@@ -62,12 +62,17 @@ echo "📋 Service Account: $SERVICE_ACCOUNT"
 
 # Deploy MCP Server
 echo "🔌 Deploying ReLeaf MCP Server..."
-DEPLOY_ARGS="--source ./ReLeaf_Agent/mcp --region=$REGION --quiet"
+DEPLOY_ARGS="--source ./ReLeaf_Agent/mcp --region=$REGION --quiet --timeout=300 --cpu=2 --memory=4Gi"
+
+# Build environment variables
+ENV_VARS="GCP_PROJECT=$PROJECT_ID"
 
 # Add Google Maps API key if available
 if [ ! -z "$GOOGLE_MAPS_API_KEY" ]; then
-    DEPLOY_ARGS="$DEPLOY_ARGS --set-env-vars=GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY"
+    ENV_VARS="$ENV_VARS,GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY"
 fi
+
+DEPLOY_ARGS="$DEPLOY_ARGS --set-env-vars=$ENV_VARS"
 
 gcloud run deploy releaf-mcp-server $DEPLOY_ARGS
 
@@ -85,6 +90,20 @@ EOF
 # Add Google Maps API key to agent environment if available
 if [ ! -z "$GOOGLE_MAPS_API_KEY" ]; then
     echo "GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" >> ./ReLeaf_Agent/.env
+fi
+
+# Check if uv is installed, if not install it
+if ! command -v uvx &> /dev/null; then
+    echo "📦 Installing uv (Python package installer)..."
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    # Add uv to PATH for current session (uv installs to ~/.local/bin)
+    export PATH="$HOME/.local/bin:$PATH"
+    # Verify installation
+    if ! command -v uvx &> /dev/null; then
+        echo "❌ Failed to install uv. Please install manually: curl -LsSf https://astral.sh/uv/install.sh | sh"
+        exit 1
+    fi
+    echo "✅ uv installed successfully"
 fi
 
 # Deploy ReLeaf Agent

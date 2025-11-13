@@ -1,9 +1,27 @@
 [project]
-name = "mcp-on-cloudrun"
-version = "0.1.0"
-description = "Example of deploying an MCP server on Cloud Run"
+name = "releaf-mcp-server"
+version = "0.2.0"
+description = "ReLeaf MCP server with integrated tree planting analysis"
 requires-python = ">=3.10"
 dependencies = [
     "fastmcp==2.11.2",
-    "geopy==2.4.1"
+    "geopy==2.4.1",
+    
+    # HTTP requests
+    "requests>=2.27.0",
+    
+    # Google Cloud (for storage and secret management)
+    "google-cloud-storage>=2.0.0",
+    "google-cloud-secret-manager>=2.0.0",
+    "google-auth>=2.0.0",
+    
+    # Geospatial & Image Processing (for urban_tree_planting)
+    "numpy>=1.21.0",
+    "scipy>=1.7.0",
+    "Pillow>=9.0.0",
+    "opencv-python-headless>=4.5.0",
+    "geopandas>=0.10.0",
+    "shapely>=1.8.0",
+    "osmnx>=1.2.0",
+    "matplotlib>=3.5.0",
 ]
