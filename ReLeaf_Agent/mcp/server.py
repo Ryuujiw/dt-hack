@@ -153,6 +153,94 @@ def get_pipeline():
     return _pipeline, _visualizer
 
 
+def download_street_view_for_spots(downloader, critical_spots, location_dir, location_name):
+    """
+    Download Google Street View images for critical priority spots
+    
+    Args:
+        downloader: DataDownloader instance
+        critical_spots: List of critical spot dictionaries with coordinates
+        location_dir: Directory to save street view images
+        location_name: Name of the location (for logging)
+    
+    Returns:
+        dict: Mapping of spot_id to street view image path
+    """
+    streetview_dir = location_dir / "streetview"
+    streetview_dir.mkdir(parents=True, exist_ok=True)
+    
+    street_view_results = {}
+    
+    for i, spot in enumerate(critical_spots, 1):
+        try:
+            spot_id = spot.get("spot_id", i)
+            lat = spot["coordinates"]["latitude"]
+            lon = spot["coordinates"]["longitude"]
+            
+            logger.info(f"  Downloading street view for spot {spot_id} ({lat:.6f}, {lon:.6f})")
+            
+            # Download street view image
+            image_path = downloader.download_street_view(lat, lon, output_dir=streetview_dir)
+            
+            if image_path:
+                street_view_results[spot_id] = {
+                    "path": image_path,
+                    "coordinates": spot["coordinates"],
+                    "priority_score": spot["priority_score"]
+                }
+                logger.info(f"    ✓ Saved street view for spot {spot_id}")
+            else:
+                logger.warning(f"    ⚠ Could not download street view for spot {spot_id}")
+                
+        except Exception as e:
+            logger.warning(f"  Failed to download street view for spot {spot_id}: {e}")
+            continue
+    
+    logger.info(f"Street view download complete: {len(street_view_results)}/{len(critical_spots)} spots")
+    return street_view_results
+
+
+def upload_street_view_images(street_view_results, location_name):
+    """
+    Upload street view images to GCS and generate signed URLs
+    
+    Args:
+        street_view_results: Dictionary mapping spot_id to {path, coordinates, priority_score}
+        location_name: Name of the location
+    
+    Returns:
+        dict: Mapping of spot_id to GCS signed URL
+    """
+    import time
+    timestamp = int(time.time())
+    street_view_urls = {}
+    
+    for spot_id, data in street_view_results.items():
+        try:
+            image_path = Path(data["path"])
+            
+            if not image_path.exists():
+                logger.warning(f"Street view image not found: {image_path}")
+                continue
+            
+            # Upload to GCS
+            blob_name = f"streetview/{location_name}_spot_{spot_id}_{timestamp}.jpeg"
+            signed_url = upload_to_gcs(image_path, blob_name)
+            
+            street_view_urls[spot_id] = {
+                "url": signed_url,
+                "coordinates": data["coordinates"],
+                "priority_score": data["priority_score"]
+            }
+            logger.info(f"  ✓ Uploaded street view for spot {spot_id} to GCS")
+            
+        except Exception as e:
+            logger.warning(f"  Failed to upload street view for spot {spot_id}: {e}")
+            continue
+    
+    return street_view_urls
+
+
 @mcp.tool()
 def analyze_tree_planting_opportunities(
     latitude: float,
@@ -174,13 +262,15 @@ def analyze_tree_planting_opportunities(
        - Sun exposure (20 points)
        - Amenity density (10 points)
     7. Identifies critical priority spots (score 80-100) with GPS coordinates
-    8. Generates Google Maps and Street View URLs for each spot
-    9. Creates visualization outputs:
+    8. Downloads Google Street View images for each critical priority spot
+    9. Generates Google Maps and Street View URLs for each spot
+    10. Creates visualization outputs:
        - 6-panel analysis PNG (satellite image with overlays)
        - Component breakdown PNG (showing individual scoring components)
        - JSON summary file
+       - Street View images uploaded to GCS with signed URLs
     
-    Processing time: 10-25 seconds depending on area complexity
+    Processing time: 15-30 seconds depending on area complexity (includes street view downloads)
     
     Output files are saved to /tmp directory on Cloud Run (ephemeral storage) or 
     local output directory when running locally.
@@ -201,6 +291,8 @@ def analyze_tree_planting_opportunities(
           * area_pixels: Area in pixels
           * google_street_view_url: Direct link to Street View
           * google_maps_url: Direct link to Google Maps
+          * street_view_image_url: Signed URL to downloaded Street View image (if available)
+          * street_view_available: Boolean indicating if street view image was successfully downloaded
         - land_coverage: Statistics on buildings, vegetation, shadows, plantable area
         - priority_distribution: Breakdown by priority level (critical/high/medium/low)
         - street_network: Count of streets by traffic type
@@ -280,6 +372,37 @@ def analyze_tree_planting_opportunities(
         
         logger.info(f"Analysis complete for '{location_name}'. Found {len(summary_data.get('critical_priority_spots', []))} critical priority spots.")
         logger.info(f"Visualizations saved to: {location_dir}")
+        
+        # Download Google Street View images for critical priority spots
+        logger.info("\nDownloading Google Street View images for critical priority spots...")
+        critical_spots = summary_data.get('critical_priority_spots', [])
+        
+        if critical_spots:
+            # Download street view images
+            street_view_results = download_street_view_for_spots(
+                pipeline.downloader,
+                critical_spots,
+                location_dir,
+                location.name
+            )
+            
+            # Upload street view images to GCS
+            if street_view_results:
+                logger.info("Uploading street view images to Google Cloud Storage...")
+                street_view_urls = upload_street_view_images(street_view_results, location.name)
+                
+                # Add street view URLs to each critical spot in the response
+                for i, spot in enumerate(summary_data['critical_priority_spots']):
+                    spot_id = spot.get('spot_id')
+                    if spot_id in street_view_urls:
+                        spot['street_view_image_url'] = street_view_urls[spot_id]['url']
+                        spot['street_view_available'] = True
+                    else:
+                        spot['street_view_available'] = False
+                
+                logger.info(f"Street view images uploaded: {len(street_view_urls)} of {len(critical_spots)} spots")
+        else:
+            logger.info("No critical priority spots found for street view download")
         
         # Upload visualizations to GCS and generate signed URLs
         import time

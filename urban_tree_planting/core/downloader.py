@@ -13,6 +13,10 @@ import geopandas as gpd
 from shapely.geometry import box
 import math
 import time
+from pathlib import Path
+from streetview import search_panoramas
+from streetview import get_panorama_async
+import os.path
 
 from config.settings import (
     GOOGLE_MAPS_API_KEY,
@@ -45,6 +49,54 @@ class DataDownloader:
             api_key: Google Maps API key
         """
         self.api_key = api_key
+
+    def download_street_view(self, lat, lon, output_dir=None):
+        """
+        Download Google Street View panorama for a location
+
+        Args:
+            lat: Latitude
+            lon: Longitude
+            output_dir: Directory to save street view image (default: "./streetview")
+
+        Returns:
+            str: Path to downloaded image file, or None if download fails
+        """
+        if output_dir is None:
+            output_dir = Path("./streetview")
+        else:
+            output_dir = Path(output_dir)
+        
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        try:
+            logger.debug(f"Downloading street view for ({lat:.6f}, {lon:.6f})")
+            
+            # Search for panoramas at this location
+            panos = search_panoramas(lat, lon)
+            
+            if not panos or len(panos) == 0:
+                logger.warning(f"  ⚠ No street view panoramas found for ({lat:.6f}, {lon:.6f})")
+                return None
+            
+            pano_id = panos[0].pano_id
+            filename = output_dir / f"{pano_id}.jpeg"
+            
+            # Skip if already downloaded
+            if filename.exists():
+                logger.debug(f"  ✓ Street view already exists: {filename}")
+                return str(filename)
+            
+            # Download the panorama (synchronous version)
+            image = get_panorama_async(pano_id=pano_id, zoom=3)
+            image.save(str(filename), "jpeg")
+            
+            logger.debug(f"  ✓ Downloaded street view: {filename}")
+            return str(filename)
+            
+        except Exception as e:
+            logger.warning(f"  ⚠ Failed to download street view for ({lat:.6f}, {lon:.6f}): {e}")
+            return None
 
     def download_satellite_image(self, lat, lon, zoom=ZOOM_LEVEL,
                                  size=SATELLITE_IMAGE_SIZE,
