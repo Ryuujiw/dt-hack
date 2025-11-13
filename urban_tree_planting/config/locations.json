@@ -1,0 +1,46 @@
+{
+  "locations": [
+    {
+      "name": "menara_lgb",
+      "description": "Menara LGB",
+      "lat": 3.13792463037415,
+      "lon": 101.62946855487311
+    },
+    {
+      "name": "klcc_park",
+      "description": "KLCC Park Area",
+      "lat": 3.1535,
+      "lon": 101.7117
+    },
+    {
+      "name": "bukit_bintang",
+      "description": "Bukit Bintang Shopping District",
+      "lat": 3.147,
+      "lon": 101.7108
+    },
+    {
+      "name": "far_east",
+      "description": "Far East",
+      "lat": 3.088871847849888,
+      "lon": 101.69362979964275
+    },
+    {
+      "name": "kl_tower",
+      "description": "KL Tower",
+      "lat": 3.153112011696742,
+      "lon": 101.70370033065622
+    },
+    {
+      "name": "pnb_118",
+      "description": "PNB 118",
+      "lat": 3.142080176414543,
+      "lon": 101.7006111094913
+    }
+  ],
+  "metadata": {
+    "region": "kuala_lumpur",
+    "created": "2025-01-09",
+    "description": "Locations across Kuala Lumpur for urban tree planting analysis",
+    "coordinate_system": "WGS84 (EPSG:4326)"
+  }
+}

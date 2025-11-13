@@ -14,7 +14,11 @@ notebooks/data/*
 CLAUDE.md
 /data/3d_context
 
-__pycache__/
-
-# Ignore locally downloaded streetview files
-notebooks/streetview/*
+.env
+/urban_tree_planting/config/__pycache__
+/urban_tree_planting/core/__pycache__
+/urban_tree_planting/pipeline/__pycache__
+/urban_tree_planting/utils/__pycache__
+/urban_tree_planting/models/__pycache__
+ReLeaf_Agent/.DS_Store
+urban_tree_planting/models/.DS_Store
