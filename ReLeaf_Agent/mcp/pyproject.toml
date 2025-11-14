@@ -10,10 +10,11 @@ dependencies = [
     # HTTP requests
     "requests>=2.27.0",
     
-    # Google Cloud (for storage and secret management)
+    # Google Cloud (for storage, secret management, and AI)
     "google-cloud-storage>=2.0.0",
     "google-cloud-secret-manager>=2.0.0",
     "google-auth>=2.0.0",
+    "google-cloud-aiplatform>=1.70.0",  # Vertex AI for Gemini Vision
     
     # Geospatial & Image Processing (for urban_tree_planting)
     "numpy>=1.21.0",
@@ -24,4 +25,7 @@ dependencies = [
     "shapely>=1.8.0",
     "osmnx>=1.2.0",
     "matplotlib>=3.5.0",
+    
+    # Ground-level analysis with Gemini Vision
+    "streetview>=0.0.16",
 ]

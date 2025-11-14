@@ -26,3 +26,7 @@ ReLeaf_Agent/mcp/INTEGRATION_SUMMARY.md
 ReLeaf_Agent/mcp/urban_tree_planting/.DS_Store
 ReLeaf_Agent/AGENT_WORKFLOW.md
 ReLeaf_Agent/mcp/urban_tree_planting/heatmap_README.md
+ReLeaf_Agent/.env
+ReLeaf_Agent/__pycache__/agent.cpython-313.pyc
+ReLeaf_Agent/mcp/__pycache__/server.cpython-313.pyc
+INNOVATION_AND_SECURITY_ANALYSIS.md

@@ -8,6 +8,7 @@ Contains the main processing logic:
 - MaskGenerator: Create pixel masks from geometries
 - PriorityCalculator: Calculate planting priority scores
 - Visualizer: Generate output visualizations
+- GroundLevelDetector: Detect existing trees from Street View imagery
 """
 
 from .downloader import DataDownloader
@@ -16,6 +17,7 @@ from .detector import VegetationDetector
 from .mask_generator import MaskGenerator
 from .priority_calculator import PriorityCalculator
 from .visualizer import ResultVisualizer
+from .ground_tree_detector import GroundLevelDetector, create_detector, analyze_spot
 
 __all__ = [
     'DataDownloader',
@@ -24,4 +26,7 @@ __all__ = [
     'MaskGenerator',
     'PriorityCalculator',
     'ResultVisualizer',
+    'GroundLevelDetector',
+    'create_detector',
+    'analyze_spot',
 ]
