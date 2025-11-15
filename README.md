@@ -99,6 +99,14 @@ ReLeaf is a fully functional, out-of-the-box solution that combines cutting-edge
 
 ## 🔒 AI Security & Guardrails
 
+**Security Architecture Overview:**
+
+![AI Security & Behavior Controls](sample_data/Utilizing_AI_Behavior&Security_concerns.png)
+
+*Multi-layered security approach combining prompt injection protection, output validation, rate limiting, and tool-level guardrails to ensure safe AI agent operations.*
+
+---
+
 ### 1. AI Agent Security
 
 **Prompt Injection Protection:**
@@ -286,6 +294,14 @@ ReLeaf uses a **hybrid multi-model approach** that combines specialized AI model
 ---
 
 ## 🌿 NDVI Vegetation Detection: The Science Behind Satellite Analysis
+
+**Example Analysis Result:**
+
+![Menara LGB TTDI Analysis](sample_data/manara_lgb_ttdi_1762978400_analysis.png)
+
+*6-panel analysis visualization showing satellite imagery, vegetation detection (NDVI), shadow mapping, street networks, priority scores, and final planting zones for Menara LGB TTDI location.*
+
+---
 
 ### What is NDVI?
 
@@ -1300,6 +1316,14 @@ The `comprehensive_researcher` agent MUST follow this workflow:
 ```
 
 ### Pre-Defined Agent Instructions
+
+**Agent Interaction Example:**
+
+![ReLeaf AI Agent Introduction](sample_data/ReLeaf_AI_Agent_Initial_Introduction.png)
+
+*The ReLeaf AI agent greeting users and explaining the 4-step analysis workflow: Location Search → Aerial Analysis → Vision Analysis → Species Recommendations.*
+
+---
 
 **Root Agent (Greeter):**
 
