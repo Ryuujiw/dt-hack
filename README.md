@@ -23,7 +23,7 @@ ReLeaf is a fully functional, out-of-the-box solution that combines cutting-edge
 
 ### System Architecture
 
-![ReLeaf System Architecture](diagrams/releaf_system_architecture.png)
+![ReLeaf System Architecture](ReLeaf_Agent/diagrams/releaf_data_flow.png)
 
 **Key Components:**
 
@@ -50,7 +50,7 @@ ReLeaf is a fully functional, out-of-the-box solution that combines cutting-edge
 
 ### Data Flow Architecture
 
-![ReLeaf Data Flow Architecture](diagrams/releaf_data_flow.png)
+![ReLeaf Data Flow Architecture](ReLeaf_Agent/diagrams/releaf_system_architecture.png)
 
 **Processing Pipeline:**
 
