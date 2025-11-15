@@ -16,9 +16,10 @@ colorSchema: dark
 exportFilename: ReLeaf-Presentation
 export:
   format: pdf
-  timeout: 30000
+  timeout: 60000
   dark: true
   withClicks: false
+  withToc: false
 ---
 
 # ReLeaf 🌿
@@ -196,79 +197,7 @@ layout: default
 
 # Architecture
 
-```mermaid
-graph TB
-    subgraph "User Interface"
-        USER[👤 User Query]
-    end
-   
-    subgraph "Google Agent Development Kit"
-        AGENT[🤖 ReLeaf Agent<br/>Sequential Agent]
-        RESEARCHER[🔍 Researcher Agent<br/>Data Collection]
-        FORMATTER[📝 Formatter Agent<br/>Response Generation]
-    end
-   
-    subgraph "MCP Tools Layer"
-        MCP[MCP Toolset<br/>HTTP Connection]
-        WIKI[Wikipedia Tool<br/>External Knowledge]
-    end
-   
-    subgraph "MCP Server - Cloud Run"
-        SEARCH[🔍 Geocoding Search<br/>Location Resolution]
-        AERIAL[🛰️ Aerial Analysis<br/>Satellite + OSM]
-        VISION[👁️ Vision Analysis<br/>Street View + Gemini]
-        SPECIES[🌳 Species Recommendations<br/>Malaysian Climate]
-    end
-   
-    subgraph "Analysis Pipeline"
-        DOWNLOAD[Image Downloader<br/>Google Maps API]
-        DETECT[Vegetation Detector<br/>NDVI Analysis]
-        MASK[Mask Generator<br/>OSM Geometries]
-        PRIORITY[Priority Calculator<br/>Scoring System]
-        VIZ[Visualizer<br/>6-Panel Output]
-        GROUND[Ground Detector<br/>YOLO + Street View]
-    end
-   
-    subgraph "External APIs"
-        GMAPS[Google Maps API<br/>Satellite Imagery]
-        OSM[OpenStreetMap<br/>Geospatial Data]
-        STREETVIEW[Street View API<br/>Ground Images]
-        GEMINI[Gemini Vision API<br/>AI Image Analysis]
-    end
-   
-    subgraph "Storage"
-        GCS[☁️ Google Cloud Storage<br/>Visualization Files]
-        OUTPUT[📁 Output Files<br/>PNG + JSON]
-    end
-   
-    USER --> AGENT
-    AGENT --> RESEARCHER
-    RESEARCHER --> MCP
-    RESEARCHER --> WIKI
-    MCP --> SEARCH
-    MCP --> AERIAL
-    MCP --> VISION
-    MCP --> SPECIES
-   
-    SEARCH --> GMAPS
-    AERIAL --> DOWNLOAD
-    DOWNLOAD --> GMAPS
-    DOWNLOAD --> OSM
-    AERIAL --> DETECT
-    AERIAL --> MASK
-    AERIAL --> PRIORITY
-    AERIAL --> VIZ
-    VIZ --> GCS
-   
-    VISION --> GROUND
-    GROUND --> STREETVIEW
-    GROUND --> GEMINI
-   
-    RESEARCHER --> FORMATTER
-    FORMATTER --> USER
-   
-    GCS --> OUTPUT
-```
+<img src="/images/releaf_system_architecture.png" style="max-height: 450px; width: auto; margin: 0 auto; display: block;" />
 
 ---
 layout: center
@@ -283,6 +212,8 @@ class: text-center
     <div class="text-blue-400">https://releaf-agent-254863210019.us-central1.run.app</div>
     <div class="text-green-400 pt-4 pb-2">💬 Try asking:</div>
     <div class="text-blue-400">"Analyze tree planting opportunities near Menara LGB"</div>
+    <div class="text-green-400 pt-4 pb-2">📦 GitHub Repository:</div>
+    <div class="text-blue-400"><a href="https://github.com/Ryuujiw/dt-hack" target="_blank">https://github.com/Ryuujiw/dt-hack</a></div>
   </div>
 </div>
 

@@ -39,3 +39,5 @@ ReLeaf_Agent/diagrams/requirements.txt
 ReLeaf_Agent/diagrams/README.md
 ReLeaf_Agent/diagrams/generate_diagrams.py
 ReLeaf_Agent/diagrams/data_flow_architecture.py
+presentation/public/.DS_Store
+presentation/.DS_Store
