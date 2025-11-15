@@ -30,3 +30,12 @@ ReLeaf_Agent/mcp/urban_tree_planting/heatmap_README.md
 **/node_modules/
 **/dist/
 **/package-lock.json
+/ReLeaf_Agent/diagrams/venv
+ReLeaf_Agent/diagrams/__pycache__/data_flow_architecture.cpython-312.pyc
+ReLeaf_Agent/diagrams/__pycache__/system_architecture.cpython-312.pyc
+ReLeaf_Agent/diagrams/system_architecture.py
+ReLeaf_Agent/diagrams/setup.sh
+ReLeaf_Agent/diagrams/requirements.txt
+ReLeaf_Agent/diagrams/README.md
+ReLeaf_Agent/diagrams/generate_diagrams.py
+ReLeaf_Agent/diagrams/data_flow_architecture.py
